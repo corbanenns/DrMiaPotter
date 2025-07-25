@@ -99,7 +99,6 @@ export default function Parents() {
           </div>
         </div>
       </section>
-
       {/* Common Concerns */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -132,7 +131,6 @@ export default function Parents() {
           </div>
         </div>
       </section>
-
       {/* Why Our Approach Works */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -194,7 +192,6 @@ export default function Parents() {
           </div>
         </div>
       </section>
-
       {/* Success Stories */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -229,7 +226,6 @@ export default function Parents() {
           </div>
         </div>
       </section>
-
       {/* What to Expect */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -279,7 +275,6 @@ export default function Parents() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-sage-warm/10 to-cream-soft">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -301,9 +296,7 @@ export default function Parents() {
               variant="outline" 
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
-            >
-              Call (458) 219-8915
-            </Button>
+            >Call (503) 856-2488</Button>
           </div>
           <p className="text-sm text-stone-medium mt-4">
             Free consultation • No obligation • HIPAA compliant
