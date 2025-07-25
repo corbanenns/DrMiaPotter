@@ -78,10 +78,10 @@ export default function Schedule() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a 
-                href="tel:(458) 219-8915"
+                href="tel:(503) 856-2488"
                 className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-6 py-3 rounded-full font-semibold transition-colors"
               >
-                Call (458) 219-8915
+                Call (503) 856-2488
               </a>
               <button
                 onClick={() => window.open('/contact', '_self')}

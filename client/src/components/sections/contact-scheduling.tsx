@@ -90,10 +90,10 @@ export default function ContactScheduling() {
                   <div>
                     <div className="font-semibold text-slate-deep">Phone</div>
                     <a 
-                      href="tel:4582198915" 
+                      href="tel:5038562488" 
                       className="text-stone-medium hover:text-sage-warm transition-colors"
                     >
-                      (458) 219-8915
+                      (503) 856-2488
                     </a>
                   </div>
                 </div>
