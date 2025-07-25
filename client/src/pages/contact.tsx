@@ -96,7 +96,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       {/* Contact Information & Form */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -168,10 +167,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-deep mb-1">Directions</h3>
-                      <p className="text-stone-medium text-sm">
-                        Easy access from Highway 97. Free parking on-site. 
-                        Look for the building next to Redmond Wellness.
-                      </p>
+                      <p className="text-stone-medium text-sm">Easy access from Highway 97. Free parking on-site. Look for the suite next to Redmond Wellness.</p>
                       <Button 
                         variant="link" 
                         className="text-sage-warm p-0 h-auto mt-2"
@@ -417,7 +413,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       {/* Map Section */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -472,7 +467,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       {/* Final CTA */}
       <section className="py-16 bg-gradient-to-br from-sage-warm/10 to-cream-soft">
         <div className="max-w-4xl mx-auto px-4 text-center">
