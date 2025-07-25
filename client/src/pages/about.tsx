@@ -165,11 +165,9 @@ export default function About() {
               <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-4">
                 Why I Became a Naturopathic Doctor
               </h3>
-              <p className="text-stone-medium mb-4">
-                After completing my degree in nutritional science at UC Berkeley, I witnessed firsthand 
-                the limitations of conventional approaches to complex health issues. I was drawn to 
-                naturopathic medicine because it honors the body's innate wisdom to heal.
-              </p>
+              <p className="text-stone-medium mb-4">After completing my degree in nutritional science at UC Berkeley, I recognized the powerful synergy between conventional medicine and natural approaches to health. I was drawn to naturopathic medicine because it complements traditional care by supporting the body's innate healing capacity.
+
+              The addition of LENS neurofeedback to my practice has been transformative, allowing me to address neurological patterns that often underlie chronic health conditions. This integrative combination gives me tools that bridge both worlds of medicine in our region.</p>
               <p className="text-stone-medium">
                 The addition of LENS neurofeedback to my practice has been transformative, allowing me 
                 to address neurological patterns that often underlie chronic health conditions. This 
