@@ -116,7 +116,7 @@ export default function Conditions() {
 
   const pediatricConditions = [
     "ADHD & Learning Difficulties",
-    "Autism Spectrum Support", 
+    "Developmental Delays", 
     "Anxiety & Behavioral Issues",
     "Sleep Problems",
     "Digestive Issues",
