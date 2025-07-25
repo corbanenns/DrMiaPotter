@@ -133,14 +133,10 @@ export default function Conditions() {
             <h1 className="font-playfair text-5xl font-bold text-slate-deep mb-6">
               Conditions We Treat
             </h1>
-            <p className="text-xl text-stone-medium max-w-3xl mx-auto leading-relaxed">
-              Specialized care for complex health conditions using our unique combination of 
-              LENS neurofeedback and naturopathic medicine. We treat the root causes, not just symptoms.
-            </p>
+            <p className="text-xl text-stone-medium max-w-3xl mx-auto leading-relaxed">Specialized care for complex health conditions through comprehensive whole-person assessment and treatment. We address your entire system and underlying root causes, not just isolated symptoms.</p>
           </div>
         </div>
       </section>
-
       {/* Main Conditions */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -192,7 +188,6 @@ export default function Conditions() {
           </div>
         </div>
       </section>
-
       {/* Pediatric Section */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -242,7 +237,6 @@ export default function Conditions() {
           </div>
         </div>
       </section>
-
       {/* Treatment Approach */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -291,7 +285,6 @@ export default function Conditions() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-sage-warm/10 to-cream-soft">
         <div className="max-w-4xl mx-auto px-4 text-center">
