@@ -74,7 +74,7 @@ export default function Conditions() {
         },
         {
           name: "Reproductive Health",
-          symptoms: ["Irregular cycles", "PMS", "Fertility challenges", "Hormonal acne"],
+          symptoms: ["Irregular cycles", "PMS", "Fertility challenges", "PCOS"],
           approach: "Natural hormone balancing through nutrition, herbs, and stress management."
         },
         {
