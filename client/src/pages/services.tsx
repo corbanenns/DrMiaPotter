@@ -10,7 +10,7 @@ export default function Services() {
       details: [
         "Non-invasive brain training technology",
         "Helps with ADHD, anxiety, trauma, and sleep issues",
-        "Suitable for ages 6 and up",
+        "Suitable for ages 1 and up",
         "Minimal side effects",
         "Typically 10-20 sessions for optimal results"
       ],
