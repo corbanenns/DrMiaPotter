@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import drPotterBW from "@assets/DrMiaPotter2_1753484664519.avif";
 
 export default function MyApproach() {
   useEffect(() => {
@@ -33,16 +34,27 @@ export default function MyApproach() {
           {/* Introduction */}
           <div className="mb-16">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-stone-light">
-              <p className="text-lg text-slate-deep/90 leading-relaxed mb-6">
-                After 12 years in practice, I've learned that true healing happens when we address not just what's wrong, 
-                but what's right—your strengths, resources, and innate healing capacity. When I say I "walk alongside people 
-                on their health journey," I mean something very specific.
-              </p>
-              <p className="text-lg text-slate-deep/90 leading-relaxed">
-                I don't just diagnose and treat—I empower, encourage, and equip you to live a healthier life. This means 
-                celebrating improvements in your sleep and energy, providing support when you face setbacks, and adjusting 
-                our treatment plan as we learn what works best for you.
-              </p>
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <p className="text-lg text-slate-deep/90 leading-relaxed mb-6">
+                    After 12 years in practice, I've learned that true healing happens when we address not just what's wrong, 
+                    but what's right—your strengths, resources, and innate healing capacity. When I say I "walk alongside people 
+                    on their health journey," I mean something very specific.
+                  </p>
+                  <p className="text-lg text-slate-deep/90 leading-relaxed">
+                    I don't just diagnose and treat—I empower, encourage, and equip you to live a healthier life. This means 
+                    celebrating improvements in your sleep and energy, providing support when you face setbacks, and adjusting 
+                    our treatment plan as we learn what works best for you.
+                  </p>
+                </div>
+                <div className="relative">
+                  <img
+                    src={drPotterBW}
+                    alt="Dr. Camella (Mia) Potter, ND"
+                    className="w-full rounded-xl shadow-lg grayscale"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
