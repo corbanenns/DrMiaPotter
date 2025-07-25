@@ -56,8 +56,8 @@ export default function AboutDrPotter() {
 
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=1000"
-              alt="Dr. Potter in her clinic"
+              src="https://images.squarespace-cdn.com/content/v1/64dbd1caf434c33e14dc2954/634eb764-05f3-4a5a-b13c-f117e2bc2655/Screenshot+2023-09-01+at+9.14.41+PM.png?format=2500w"
+              alt="Dr. Camella (Mia) Potter, ND"
               className="w-full rounded-2xl shadow-xl"
             />
 
