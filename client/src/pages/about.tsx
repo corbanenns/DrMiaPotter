@@ -115,6 +115,13 @@ export default function About() {
                     <div>Specialized training in trauma-informed care</div>
                   </div>
                 </li>
+                <li className="flex items-start space-x-3">
+                  <Brain className="w-6 h-6 text-sage-warm mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-slate-deep">Certified Focusing Professional</div>
+                    <div>Guides clients to access inner wisdom through body-centered awareness techniques</div>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
