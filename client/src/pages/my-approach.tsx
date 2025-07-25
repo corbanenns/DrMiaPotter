@@ -14,7 +14,7 @@ export default function MyApproach() {
   return (
     <div className="min-h-screen bg-cream-soft">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-cream-soft to-sage-warm/10">
+      <section className="py-20 bg-gradient-to-br from-cream-soft to-sage-warm/10 pt-[28px] pb-[28px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mt-[1px] mb-[1px]">
             <h1 className="text-4xl sm:text-5xl font-playfair font-bold text-slate-deep mb-6">
