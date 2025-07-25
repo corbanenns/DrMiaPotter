@@ -12,6 +12,7 @@ import Conditions from "@/pages/conditions";
 import Parents from "@/pages/parents";
 import NewPatients from "@/pages/new-patients";
 import Contact from "@/pages/contact";
+import MyApproach from "@/pages/my-approach";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
       <Route path="/parents" component={Parents} />
       <Route path="/new-patients" component={NewPatients} />
       <Route path="/contact" component={Contact} />
+      <Route path="/my-approach" component={MyApproach} />
       <Route component={NotFound} />
     </Switch>
   );

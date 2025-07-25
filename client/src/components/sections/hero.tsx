@@ -35,6 +35,7 @@ export default function Hero() {
               <Button 
                 size="lg"
                 className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold text-lg"
+                onClick={() => window.open('/contact', '_self')}
               >
                 Schedule Free Consultation
               </Button>
@@ -42,6 +43,7 @@ export default function Hero() {
                 variant="outline" 
                 size="lg"
                 className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+                onClick={() => window.open('/my-approach', '_self')}
               >
                 Learn More
               </Button>
