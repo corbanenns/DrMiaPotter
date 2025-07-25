@@ -1,6 +1,7 @@
 import { Brain, Heart, Scale, Shield, Users, Zap, Activity, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
 export default function Conditions() {
   const conditionCategories = [
     {
@@ -159,7 +160,7 @@ export default function Conditions() {
 
                 <div className="grid md:grid-cols-2 gap-8">
                   {category.conditions.map((condition, conditionIndex) => (
-                    <div key={conditionIndex} className="bg-cream-soft rounded-lg p-6 border border-stone-light">
+                    <div key={conditionIndex} className="bg-cream-soft rounded-lg p-6 border border-stone-light hover:shadow-lg transition-shadow duration-300 stagger-item">
                       <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-4">
                         {condition.name}
                       </h3>
