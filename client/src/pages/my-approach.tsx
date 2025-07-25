@@ -27,7 +27,7 @@ export default function MyApproach() {
         </div>
       </section>
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 pt-[36px] pb-[36px]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Introduction */}
