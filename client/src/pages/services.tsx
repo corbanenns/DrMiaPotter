@@ -204,7 +204,7 @@ export default function Services() {
               {
                 step: "3",
                 title: "Personalized Plan",
-                description: "Custom treatment protocol combining LENS sessions with naturopathic therapies"
+                description: "Customized whole-system approach based on your unique story, addressing root causes across all aspects of your health"
               },
               {
                 step: "4",
