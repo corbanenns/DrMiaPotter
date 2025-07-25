@@ -487,10 +487,10 @@ export default function Contact() {
             <Button 
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
-              onClick={() => window.location.href = 'tel:4582198915'}
+              onClick={() => window.location.href = 'tel:5038562488'}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Call Now: (458) 219-8915
+              Call Now: (503) 856-2488
             </Button>
             <Button 
               variant="outline" 
