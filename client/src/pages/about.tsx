@@ -17,7 +17,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Detailed About Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -48,7 +47,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Credentials Section */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -113,7 +111,7 @@ export default function About() {
                 <li className="flex items-start space-x-3">
                   <Heart className="w-6 h-6 text-sage-warm mt-1 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-slate-deep">Trauma Release Certification</div>
+                    <div className="font-semibold text-slate-deep">Trauma Release Educated</div>
                     <div>Specialized training in trauma-informed care</div>
                   </div>
                 </li>
@@ -122,7 +120,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Philosophy Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
