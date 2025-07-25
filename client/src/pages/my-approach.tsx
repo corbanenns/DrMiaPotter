@@ -16,7 +16,7 @@ export default function MyApproach() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-cream-soft to-sage-warm/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mt-[1px] mb-[1px]">
             <h1 className="text-4xl sm:text-5xl font-playfair font-bold text-slate-deep mb-6">
               A Personal Message from Dr. Mia Potter
             </h1>
@@ -26,7 +26,6 @@ export default function MyApproach() {
           </div>
         </div>
       </section>
-
       {/* Main Content */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
