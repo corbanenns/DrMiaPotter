@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --background: hsl(38, 67%, 94%);
+  --foreground: hsl(200, 15%, 36%);
+  --muted: hsl(39, 67%, 96%);
+  --muted-foreground: hsl(35, 5%, 54%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(200, 15%, 36%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(200, 15%, 36%);
+  --border: hsl(35, 11%, 76%);
+  --input: hsl(35, 11%, 76%);
+  --primary: hsl(200, 15%, 36%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(46, 25%, 71%);
+  --secondary-foreground: hsl(200, 15%, 36%);
+  --accent: hsl(46, 25%, 71%);
+  --accent-foreground: hsl(200, 15%, 36%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(200, 15%, 36%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for Dr. Potter's brand */
+  --slate-deep: hsl(200, 15%, 36%);
+  --sage-warm: hsl(46, 25%, 71%);
+  --cream-soft: hsl(38, 67%, 94%);
+  --stone-light: hsl(35, 11%, 76%);
+  --stone-medium: hsl(35, 5%, 54%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(200, 15%, 36%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-slate-deep {
+    color: hsl(200, 15%, 36%);
+  }
+  
+  .text-sage-warm {
+    color: hsl(46, 25%, 71%);
+  }
+  
+  .text-cream-soft {
+    color: hsl(38, 67%, 94%);
+  }
+  
+  .text-stone-light {
+    color: hsl(35, 11%, 76%);
+  }
+  
+  .text-stone-medium {
+    color: hsl(35, 5%, 54%);
+  }
+  
+  .bg-slate-deep {
+    background-color: hsl(200, 15%, 36%);
+  }
+  
+  .bg-sage-warm {
+    background-color: hsl(46, 25%, 71%);
+  }
+  
+  .bg-cream-soft {
+    background-color: hsl(38, 67%, 94%);
+  }
+  
+  .bg-stone-light {
+    background-color: hsl(35, 11%, 76%);
+  }
+  
+  .bg-stone-medium {
+    background-color: hsl(35, 5%, 54%);
+  }
+  
+  .border-slate-deep {
+    border-color: hsl(200, 15%, 36%);
+  }
+  
+  .border-sage-warm {
+    border-color: hsl(46, 25%, 71%);
+  }
+  
+  .border-stone-light {
+    border-color: hsl(35, 11%, 76%);
+  }
+  
+  .hover\:text-sage-warm:hover {
+    color: hsl(46, 25%, 71%);
+  }
+  
+  .hover\:bg-sage-warm:hover {
+    background-color: hsl(46, 25%, 71%);
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}

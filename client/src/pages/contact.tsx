@@ -1,0 +1,509 @@
+import { useState } from "react";
+import { Phone, MapPin, Clock, Shield, Car, Mail, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+
+export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    consultationType: "",
+    preferredTime: "",
+    urgency: "",
+    concerns: "",
+    referralSource: ""
+  });
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Consultation Request Sent",
+          description: "We'll contact you within 24 hours to schedule your free consultation.",
+        });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          consultationType: "",
+          preferredTime: "",
+          urgency: "",
+          concerns: "",
+          referralSource: ""
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your request. Please call us directly at (458) 219-8915.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const officeHours = [
+    { day: "Monday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Wednesday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Thursday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Saturday", hours: "By Appointment" },
+    { day: "Sunday", hours: "Closed" }
+  ];
+
+  return (
+    <div className="pt-8">
+      {/* Hero Section */}
+      <section className="py-16 bg-gradient-to-br from-cream-soft to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="font-playfair text-5xl font-bold text-slate-deep mb-6">
+              Contact Us
+            </h1>
+            <p className="text-xl text-stone-medium max-w-3xl mx-auto leading-relaxed">
+              Ready to take the first step toward optimal health? We're here to answer your questions 
+              and help you begin your healing journey with Dr. Potter.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information & Form */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card className="border-stone-light">
+                <CardHeader>
+                  <CardTitle className="font-playfair text-2xl text-slate-deep">
+                    Get in Touch
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-sage-warm/20 p-3 rounded-full">
+                      <Phone className="w-6 h-6 text-sage-warm" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-deep mb-1">Phone</h3>
+                      <a 
+                        href="tel:4582198915" 
+                        className="text-stone-medium hover:text-sage-warm transition-colors text-lg"
+                      >
+                        (458) 219-8915
+                      </a>
+                      <p className="text-sm text-stone-medium mt-1">
+                        Call for immediate assistance or to schedule your appointment
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-sage-warm/20 p-3 rounded-full">
+                      <Mail className="w-6 h-6 text-sage-warm" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-deep mb-1">Email</h3>
+                      <a 
+                        href="mailto:info@growintegrativehealth.com" 
+                        className="text-stone-medium hover:text-sage-warm transition-colors"
+                      >
+                        info@growintegrativehealth.com
+                      </a>
+                      <p className="text-sm text-stone-medium mt-1">
+                        For general inquiries and non-urgent questions
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-sage-warm/20 p-3 rounded-full">
+                      <MapPin className="w-6 h-6 text-sage-warm" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-deep mb-1">Location</h3>
+                      <div className="text-stone-medium">
+                        1655 SW Highland Ave, Suite 5<br />
+                        Redmond, OR 97756
+                      </div>
+                      <p className="text-sm text-stone-medium mt-1">
+                        Located next to Redmond Wellness, convenient parking available
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-sage-warm/20 p-3 rounded-full">
+                      <Car className="w-6 h-6 text-sage-warm" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-deep mb-1">Directions</h3>
+                      <p className="text-stone-medium text-sm">
+                        Easy access from Highway 97. Free parking on-site. 
+                        Look for the building next to Redmond Wellness.
+                      </p>
+                      <Button 
+                        variant="link" 
+                        className="text-sage-warm p-0 h-auto mt-2"
+                        onClick={() => window.open('https://maps.google.com/?q=1655+SW+Highland+Ave,+Suite+5,+Redmond,+OR+97756', '_blank')}
+                      >
+                        Get Directions →
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Office Hours */}
+              <Card className="border-stone-light">
+                <CardHeader>
+                  <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
+                    <Clock className="w-6 h-6 text-sage-warm mr-3" />
+                    Office Hours
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {officeHours.map((schedule, index) => (
+                      <div key={index} className="flex justify-between items-center py-1">
+                        <span className="font-medium text-slate-deep">{schedule.day}</span>
+                        <span className="text-stone-medium">{schedule.hours}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-3 bg-sage-warm/10 rounded-lg border border-sage-warm/20">
+                    <p className="text-sm text-stone-medium">
+                      <strong>Evening & Weekend Appointments:</strong> Available by special request for established patients.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Emergency Contact */}
+              <Card className="border-stone-light bg-cream-soft">
+                <CardHeader>
+                  <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
+                    <Shield className="w-6 h-6 text-sage-warm mr-3" />
+                    After Hours & Emergencies
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-stone-medium mb-3">
+                    For medical emergencies, please call 911 or go to your nearest emergency room.
+                  </p>
+                  <p className="text-stone-medium">
+                    For urgent health questions outside office hours, please call our main number 
+                    and leave a detailed message. Dr. Potter will return calls within 24 hours for established patients.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <Card className="border-stone-light">
+                <CardHeader>
+                  <CardTitle className="font-playfair text-2xl text-slate-deep">
+                    Schedule Your Free Consultation
+                  </CardTitle>
+                  <p className="text-stone-medium">
+                    Complete this form and we'll contact you within 24 hours to schedule your 
+                    complimentary 15-minute consultation.
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="firstName" className="text-stone-medium font-medium">
+                          First Name *
+                        </Label>
+                        <Input
+                          id="firstName"
+                          type="text"
+                          required
+                          value={formData.firstName}
+                          onChange={(e) => handleInputChange("firstName", e.target.value)}
+                          className="mt-2 border-stone-light focus:border-sage-warm"
+                          placeholder="Your first name"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="lastName" className="text-stone-medium font-medium">
+                          Last Name *
+                        </Label>
+                        <Input
+                          id="lastName"
+                          type="text"
+                          required
+                          value={formData.lastName}
+                          onChange={(e) => handleInputChange("lastName", e.target.value)}
+                          className="mt-2 border-stone-light focus:border-sage-warm"
+                          placeholder="Your last name"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="email" className="text-stone-medium font-medium">
+                        Email Address *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        className="mt-2 border-stone-light focus:border-sage-warm"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+
+                    <div>
+                      <Label htmlFor="phone" className="text-stone-medium font-medium">
+                        Phone Number *
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        className="mt-2 border-stone-light focus:border-sage-warm"
+                        placeholder="(555) 123-4567"
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label className="text-stone-medium font-medium">
+                          Preferred Consultation Type *
+                        </Label>
+                        <Select onValueChange={(value) => handleInputChange("consultationType", value)}>
+                          <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
+                            <SelectValue placeholder="Select consultation type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="phone">Phone Consultation</SelectItem>
+                            <SelectItem value="in-person">In-Person Consultation</SelectItem>
+                            <SelectItem value="video">Video Consultation</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div>
+                        <Label className="text-stone-medium font-medium">
+                          Preferred Time of Day
+                        </Label>
+                        <Select onValueChange={(value) => handleInputChange("preferredTime", value)}>
+                          <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
+                            <SelectValue placeholder="Select preferred time" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="morning">Morning (9 AM - 12 PM)</SelectItem>
+                            <SelectItem value="afternoon">Afternoon (12 PM - 5 PM)</SelectItem>
+                            <SelectItem value="evening">Evening (After 5 PM)</SelectItem>
+                            <SelectItem value="weekend">Weekend</SelectItem>
+                            <SelectItem value="flexible">I'm Flexible</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label className="text-stone-medium font-medium">
+                        How did you hear about us?
+                      </Label>
+                      <Select onValueChange={(value) => handleInputChange("referralSource", value)}>
+                        <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
+                          <SelectValue placeholder="Select referral source" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="google">Google Search</SelectItem>
+                          <SelectItem value="referral">Doctor Referral</SelectItem>
+                          <SelectItem value="friend">Friend/Family</SelectItem>
+                          <SelectItem value="social-media">Social Media</SelectItem>
+                          <SelectItem value="website">Other Website</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <Label className="text-stone-medium font-medium">
+                        Urgency Level
+                      </Label>
+                      <Select onValueChange={(value) => handleInputChange("urgency", value)}>
+                        <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
+                          <SelectValue placeholder="Select urgency level" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="routine">Routine - within 2 weeks</SelectItem>
+                          <SelectItem value="soon">Soon - within 1 week</SelectItem>
+                          <SelectItem value="urgent">Urgent - within 2-3 days</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="concerns" className="text-stone-medium font-medium">
+                        Brief Description of Health Concerns *
+                      </Label>
+                      <Textarea
+                        id="concerns"
+                        rows={4}
+                        required
+                        value={formData.concerns}
+                        onChange={(e) => handleInputChange("concerns", e.target.value)}
+                        className="mt-2 border-stone-light focus:border-sage-warm"
+                        placeholder="Please briefly describe your main health concerns and what brought you to seek natural healthcare. This helps Dr. Potter prepare for your consultation."
+                      />
+                    </div>
+
+                    <div className="text-sm text-stone-medium bg-white p-4 rounded border border-sage-warm/20">
+                      <Shield className="w-4 h-4 text-sage-warm mr-2 inline" />
+                      <strong>Privacy Protected:</strong> Your information is protected by HIPAA and will never be shared with third parties. 
+                      All communications are confidential and secure.
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-sage-warm text-slate-deep hover:bg-sage-warm/90 py-4 rounded-lg font-semibold text-lg"
+                    >
+                      {isSubmitting ? "Submitting..." : "Schedule Free Consultation"}
+                    </Button>
+
+                    <p className="text-center text-sm text-stone-medium">
+                      Or call us directly at{" "}
+                      <a href="tel:4582198915" className="text-sage-warm hover:underline font-medium">
+                        (458) 219-8915
+                      </a>
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 bg-cream-soft">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="font-playfair text-3xl font-bold text-slate-deep mb-4">
+              Find Us in Redmond
+            </h2>
+            <p className="text-lg text-stone-medium">
+              Conveniently located in the heart of Central Oregon
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 border border-stone-light">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-4">
+                  Easy to Find, Easy to Access
+                </h3>
+                <div className="space-y-4 text-stone-medium">
+                  <p>
+                    Our office is conveniently located on SW Highland Avenue, next to Redmond Wellness. 
+                    We're easily accessible from Highway 97 and offer free on-site parking.
+                  </p>
+                  <div className="bg-sage-warm/10 rounded-lg p-4 border border-sage-warm/20">
+                    <h4 className="font-semibold text-slate-deep mb-2">Landmarks & Directions:</h4>
+                    <ul className="space-y-1 text-sm">
+                      <li>• Next to Redmond Wellness</li>
+                      <li>• 5 minutes from downtown Redmond</li>
+                      <li>• Wheelchair accessible</li>
+                      <li>• Free parking available</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-stone-light/30 rounded-lg h-64 flex items-center justify-center">
+                <div className="text-center text-stone-medium">
+                  <MapPin className="w-12 h-12 mx-auto mb-4 text-sage-warm" />
+                  <p className="font-medium">Interactive Map</p>
+                  <p className="text-sm">1655 SW Highland Ave, Suite 5</p>
+                  <p className="text-sm">Redmond, OR 97756</p>
+                  <Button 
+                    variant="outline"
+                    className="mt-4 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
+                    onClick={() => window.open('https://maps.google.com/?q=1655+SW+Highland+Ave,+Suite+5,+Redmond,+OR+97756', '_blank')}
+                  >
+                    Open in Google Maps
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-gradient-to-br from-sage-warm/10 to-cream-soft">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="font-playfair text-3xl font-bold text-slate-deep mb-4">
+            Questions? We're Here to Help
+          </h2>
+          <p className="text-xl text-stone-medium mb-8">
+            Don't hesitate to reach out. Dr. Potter and her team are committed to providing 
+            exceptional care and support throughout your healing journey.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              size="lg"
+              className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
+              onClick={() => window.location.href = 'tel:4582198915'}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Call Now: (458) 219-8915
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.location.href = 'mailto:info@growintegrativehealth.com'}
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Send Email
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
