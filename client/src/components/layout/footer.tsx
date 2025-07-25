@@ -75,9 +75,7 @@ export default function Footer() {
                 <a 
                   href="tel:4582198915" 
                   className="hover:text-sage-warm transition-colors"
-                >
-                  (458) 219-8915
-                </a>
+                >503-856-2488</a>
               </div>
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-sage-warm mt-1" />

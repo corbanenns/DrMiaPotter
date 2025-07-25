@@ -5,21 +5,23 @@ export default function Testimonials() {
   const testimonials = [
     {
       rating: 5,
-      text: "After 3 months with Dr. Potter, my son's ADHD symptoms improved dramatically. He's sleeping better, focusing in school, and the whole family is less stressed.",
-      author: "Sarah M.",
-      role: "Parent of 8-year-old patient"
+      text: "Camella (Mia) Potter is a fabulous provider. She takes time to listen to your concerns and is always willing to work with you to find out what makes your conditions better. She always goes above and beyond to make sure you understand what is causing your concern, always willing to take extra time to get you additional info and always makes you feel like your needs are important no matter how small or big they may be.",
+      age: ""
     },
     {
       rating: 5,
-      text: "I had tried everything for my digestive issues. Dr. Potter's combination approach finally gave me my life back. I feel like myself again.",
-      author: "Michael R.",
-      role: "Adult patient, digestive issues"
+      text: "Mia is a great asset to the medical field and brings a breath of fresh air to an industry that doesn't always have answers or seem caring. I would recommend her to anyone looking for a provider that cares about their patients.",
+      age: "35 yo"
     },
     {
       rating: 5,
-      text: "The LENS therapy has been life-changing for my anxiety. Dr. Potter truly listens and creates personalized treatment plans that work.",
-      author: "Jennifer L.",
-      role: "Adult patient, anxiety"
+      text: "Just a few words about a wonderful lady. Dr. Potter has been my doctor for two and a half years now and I would recommend her to anyone. She always has a smile and great disposition, good advice and answers to your problems, never talks down to you, always treating you as an equal. She has touched my life.",
+      age: "64 yo"
+    },
+    {
+      rating: 5,
+      text: "Dr. Mia Potter has been my doctor for quite a while now. She is amazing, caring, attentive and thorough. She is always continuing to find new ways to help me feel better physically and mentally. She is hands down one of the best physicians I have had, EVER. I would follow her for my care anywhere she may go.",
+      age: "35 yo"
     }
   ];
 
@@ -28,14 +30,14 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-4xl font-bold text-slate-deep mb-4">
-            Patient Success Stories
+            Testimonials
           </h2>
           <p className="text-xl text-stone-medium">
-            Real transformations from real people
+            Real experiences from real patients
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
@@ -50,21 +52,15 @@ export default function Testimonials() {
                 <p className="text-stone-medium italic mb-4">
                   "{testimonial.text}"
                 </p>
-                <div className="text-slate-deep font-semibold">- {testimonial.author}</div>
-                <div className="text-stone-medium text-sm">{testimonial.role}</div>
+                {testimonial.age && (
+                  <div className="text-stone-medium text-sm">{testimonial.age}</div>
+                )}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button 
-            variant="outline"
-            className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold"
-          >
-            Read More Success Stories
-          </Button>
-        </div>
+
       </div>
     </section>
   );
