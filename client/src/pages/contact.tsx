@@ -75,8 +75,8 @@ export default function Contact() {
     { day: "Tuesday", hours: "9:00 AM - 5:00 PM" },
     { day: "Wednesday", hours: "9:00 AM - 5:00 PM" },
     { day: "Thursday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Saturday", hours: "By Appointment" },
+    { day: "Friday", hours: "Closed" },
+    { day: "Saturday", hours: "Closed" },
     { day: "Sunday", hours: "Closed" }
   ];
 
