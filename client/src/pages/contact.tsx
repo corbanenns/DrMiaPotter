@@ -213,10 +213,7 @@ export default function Contact() {
                   <p className="text-stone-medium mb-3">
                     For medical emergencies, please call 911 or go to your nearest emergency room.
                   </p>
-                  <p className="text-stone-medium">
-                    For urgent health questions outside office hours, please call our main number 
-                    and leave a detailed message. Dr. Potter will return calls within 24 hours for established patients.
-                  </p>
+                  <p className="text-stone-medium">For health questions outside office hours, message Dr. Potter through the patient portal. Voicemail messages will be returned within two business days. </p>
                 </CardContent>
               </Card>
             </div>
