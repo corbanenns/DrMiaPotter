@@ -1,4 +1,4 @@
-import { Users, Heart, Lightbulb, Shield, Check, Star, Brain } from "lucide-react";
+import { Users, Heart, Lightbulb, Shield, Check, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Parents() {
@@ -18,27 +18,6 @@ export default function Parents() {
     {
       concern: "Digestive issues and food sensitivities",
       solution: "Gut healing protocols designed specifically for children's developing digestive systems."
-    }
-  ];
-
-  const successStories = [
-    {
-      age: "8-year-old boy",
-      condition: "ADHD",
-      result: "Dramatic improvement in focus and school performance after 3 months. Family stress significantly reduced.",
-      parent: "Sarah M."
-    },
-    {
-      age: "10-year-old girl", 
-      condition: "Anxiety",
-      result: "Sleeping through the night and participating confidently in activities she previously avoided.",
-      parent: "Jennifer K."
-    },
-    {
-      age: "12-year-old boy",
-      condition: "Behavioral Issues",
-      result: "Better emotional regulation and improved relationships with siblings and peers.",
-      parent: "Mike R."
     }
   ];
 
@@ -192,7 +171,7 @@ export default function Parents() {
           </div>
         </div>
       </section>
-      {/* Success Stories */}
+      {/* Success Stories - Hidden until real family stories are available
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -226,6 +205,7 @@ export default function Parents() {
           </div>
         </div>
       </section>
+      */}
       {/* What to Expect */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
