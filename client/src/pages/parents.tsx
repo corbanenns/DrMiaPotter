@@ -71,7 +71,7 @@ export default function Parents() {
               <div className="bg-sage-warm/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                 <Users className="w-8 h-8 text-sage-warm" />
               </div>
-              <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-3">Ages 6 & Up</h3>
+              <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-3">Ages 1 & Up</h3>
               <p className="text-stone-medium">
                 Gentle, age-appropriate treatments that support healthy development while addressing current challenges.
               </p>
