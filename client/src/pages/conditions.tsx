@@ -64,7 +64,7 @@ export default function Conditions() {
       conditions: [
         {
           name: "Thyroid Disorders",
-          symptoms: ["Fatigue", "Weight changes", "Hair loss", "Temperature sensitivity"],
+          symptoms: ["Fatigue", "Weight changes", "Hair loss", "Constipation"],
           approach: "Comprehensive thyroid testing and natural thyroid support including T3/T4 optimization."
         },
         {
