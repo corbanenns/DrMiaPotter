@@ -121,7 +121,10 @@ export default function Services() {
                       Ready to experience the benefits of {service.title.toLowerCase()}? 
                       Book your consultation today.
                     </p>
-                    <Button className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold">
+                    <Button 
+                      className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold"
+                      onClick={() => window.open('/schedule', '_self')}
+                    >
                       Book Consultation
                     </Button>
                   </div>
@@ -191,7 +194,7 @@ export default function Services() {
               {
                 step: "1",
                 title: "Initial Consultation",
-                description: "Comprehensive 60-90 minute evaluation of your health history and current concerns"
+                description: "Comprehensive 60 minute evaluation of your health history and current concerns"
               },
               {
                 step: "2", 
@@ -237,6 +240,7 @@ export default function Services() {
             <Button 
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.open('/schedule', '_self')}
             >
               Schedule Free Consultation
             </Button>
@@ -244,8 +248,9 @@ export default function Services() {
               variant="outline" 
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.open('tel:5038562488', '_self')}
             >
-              Call (458) 219-8915
+              Call (503) 856-2488
             </Button>
           </div>
         </div>

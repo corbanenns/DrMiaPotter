@@ -340,7 +340,7 @@ export default function ConditionsTreated() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
-                onClick={() => window.open('/contact', '_self')}
+                onClick={() => window.open('/schedule', '_self')}
                 className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold text-lg transition-colors"
               >
                 Schedule Free Consultation

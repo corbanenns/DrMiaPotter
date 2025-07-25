@@ -87,6 +87,7 @@ export default function ForParents() {
               <Button 
                 size="lg"
                 className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
+                onClick={() => window.open('/schedule', '_self')}
               >
                 Schedule Parent Consultation
               </Button>

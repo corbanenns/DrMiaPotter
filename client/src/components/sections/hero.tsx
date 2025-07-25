@@ -35,7 +35,7 @@ export default function Hero() {
               <Button 
                 size="lg"
                 className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold text-lg"
-                onClick={() => window.open('/contact', '_self')}
+                onClick={() => window.open('/schedule', '_self')}
               >
                 Schedule Free Consultation
               </Button>

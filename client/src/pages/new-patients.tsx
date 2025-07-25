@@ -26,7 +26,7 @@ export default function NewPatients() {
     {
       step: "3",
       title: "Initial Appointment",
-      description: "Your first visit is 60-90 minutes with Dr. Potter for a thorough evaluation.",
+      description: "Your first visit is 60 minutes with Dr. Potter for a thorough evaluation.",
       details: "We'll review your health history, discuss your goals, and begin developing your personalized treatment plan."
     },
     {
@@ -56,7 +56,7 @@ export default function NewPatients() {
     },
     {
       service: "Initial Appointment",
-      duration: "60-90 minutes",
+      duration: "60 minutes",
       price: "$350",
       description: "Comprehensive evaluation with Dr. Potter",
       included: ["Complete health history", "Physical examination", "Treatment plan development", "Initial recommendations"]
@@ -134,7 +134,7 @@ export default function NewPatients() {
                 Your First Appointment
               </h2>
               <p className="text-lg text-stone-medium leading-relaxed">
-                Unlike rushed conventional appointments, Dr. Potter dedicates a full 60-90 minutes 
+                Unlike rushed conventional appointments, Dr. Potter dedicates a full 60 minutes 
                 to truly understand your health story and develop a personalized treatment plan.
               </p>
 
