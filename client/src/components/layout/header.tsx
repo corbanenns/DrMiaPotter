@@ -48,6 +48,7 @@ export default function Header() {
             <Button 
               size="sm" 
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-4 py-1 rounded-full text-sm font-medium"
+              onClick={() => window.open('/schedule', '_self')}
             >
               Schedule Now
             </Button>

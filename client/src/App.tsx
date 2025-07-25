@@ -13,6 +13,7 @@ import Parents from "@/pages/parents";
 import NewPatients from "@/pages/new-patients";
 import Contact from "@/pages/contact";
 import MyApproach from "@/pages/my-approach";
+import Schedule from "@/pages/schedule";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/new-patients" component={NewPatients} />
       <Route path="/contact" component={Contact} />
       <Route path="/my-approach" component={MyApproach} />
+      <Route path="/schedule" component={Schedule} />
       <Route component={NotFound} />
     </Switch>
   );
