@@ -88,8 +88,11 @@ export default function Header() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button className="hidden sm:block bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-6 py-2 rounded-full font-medium">
-              Schedule Appointment
+            <Button 
+              className="hidden sm:block bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-6 py-2 rounded-full font-medium"
+              onClick={() => window.open('https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do', '_blank')}
+            >
+              Patient Portal
             </Button>
             <Button
               variant="ghost"
@@ -124,8 +127,11 @@ export default function Header() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="sm:hidden bg-sage-warm text-slate-deep hover:bg-sage-warm/90 w-full rounded-full font-medium mt-4">
-                Schedule Appointment
+              <Button 
+                className="sm:hidden bg-sage-warm text-slate-deep hover:bg-sage-warm/90 w-full rounded-full font-medium mt-4"
+                onClick={() => window.open('https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do', '_blank')}
+              >
+                Patient Portal
               </Button>
             </div>
           </div>
