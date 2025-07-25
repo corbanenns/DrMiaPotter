@@ -1,4 +1,5 @@
 import { GraduationCap, Award, Brain } from "lucide-react";
+import drPotterHeadshot from "@assets/DrMiaPotterHeadShot_1753483233551.jpg";
 
 export default function AboutDrPotter() {
   return (
@@ -56,7 +57,7 @@ export default function AboutDrPotter() {
 
           <div className="relative">
             <img
-              src="https://images.squarespace-cdn.com/content/v1/64dbd1caf434c33e14dc2954/634eb764-05f3-4a5a-b13c-f117e2bc2655/Screenshot+2023-09-01+at+9.14.41+PM.png?format=2500w"
+              src={drPotterHeadshot}
               alt="Dr. Camella (Mia) Potter, ND"
               className="w-full rounded-2xl shadow-xl"
             />
