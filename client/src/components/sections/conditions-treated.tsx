@@ -61,7 +61,10 @@ export default function ConditionsTreated() {
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold">
+          <Button 
+            className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-3 rounded-full font-semibold"
+            onClick={() => window.open('/conditions-treated', '_self')}
+          >
             View All Conditions We Treat
           </Button>
         </div>
