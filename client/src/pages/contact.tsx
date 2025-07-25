@@ -197,11 +197,7 @@ export default function Contact() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 p-3 bg-sage-warm/10 rounded-lg border border-sage-warm/20">
-                    <p className="text-sm text-stone-medium">
-                      <strong>Evening & Weekend Appointments:</strong> Available by special request for established patients.
-                    </p>
-                  </div>
+                  
                 </CardContent>
               </Card>
 
