@@ -406,7 +406,7 @@ export default function NewPatients() {
               },
               {
                 question: "Is LENS neurofeedback safe for children?",
-                answer: "Yes, LENS is completely safe for children 6 years and older. It's non-invasive, comfortable, and children typically enjoy the sessions. Many parents see remarkable improvements in their children's focus, behavior, and emotional regulation."
+                answer: "Yes, LENS is completely safe for children 1 year and older. It's non-invasive, comfortable, and children typically enjoy the sessions. Many parents see remarkable improvements in their children's focus, behavior, and emotional regulation."
               },
               {
                 question: "Can I continue seeing my other doctors?",

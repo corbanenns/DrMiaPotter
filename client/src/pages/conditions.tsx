@@ -202,7 +202,7 @@ export default function Conditions() {
                 <Users className="w-8 h-8 text-sage-warm" />
               </div>
               <h2 className="font-playfair text-3xl font-bold text-slate-deep">
-                Pediatric Conditions (Ages 6+)
+                Pediatric Conditions (Ages 1+)
               </h2>
             </div>
             <p className="text-lg text-stone-medium max-w-2xl mx-auto">

@@ -147,7 +147,7 @@ export default function About() {
               <ul className="space-y-4">
                 {[
                   "Full hour appointments for comprehensive evaluation",
-                  "Treats patients from age 6 through adults",
+                  "Treats patients from age 1 through adults",
                   "Only practitioner in Central Oregon combining LENS with naturopathic medicine",
                   "Addresses physical, mental, spiritual, and energetic layers",
                   "Personalized treatment plans based on individual needs",
