@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MapPin, Clock, Shield, Car, Calendar } from "lucide-react";
+import { Phone, MapPin, Clock, Shield, Car, Calendar, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -127,6 +127,24 @@ export default function Contact() {
 
                   <div className="flex items-start space-x-4">
                     <div className="bg-sage-warm/20 p-3 rounded-full">
+                      <Phone className="w-6 h-6 text-sage-warm" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-slate-deep mb-1">Billing Department</h3>
+                      <a 
+                        href="tel:9712088915" 
+                        className="text-stone-medium hover:text-sage-warm transition-colors text-lg"
+                      >
+                        (971) 208-8915
+                      </a>
+                      <p className="text-sm text-stone-medium mt-1">
+                        For billing questions and payment assistance
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-sage-warm/20 p-3 rounded-full">
                       <MapPin className="w-6 h-6 text-sage-warm" />
                     </div>
                     <div>
@@ -178,6 +196,30 @@ export default function Contact() {
                     ))}
                   </div>
                   
+                </CardContent>
+              </Card>
+
+              {/* Billing & Payment */}
+              <Card className="border-stone-light bg-sage-warm/5">
+                <CardHeader>
+                  <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
+                    <DollarSign className="w-6 h-6 text-sage-warm mr-3" />
+                    Billing & Payment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-stone-medium mb-3">
+                    <strong>Log into your ChaRM patient portal</strong> to view and pay any open invoices securely online.
+                  </p>
+                  <p className="text-stone-medium mb-3">
+                    For billing questions or payment assistance, contact our billing department at{" "}
+                    <a href="tel:9712088915" className="text-sage-warm hover:underline font-medium">
+                      (971) 208-8915
+                    </a>
+                  </p>
+                  <p className="text-stone-medium text-sm">
+                    Payment is due at time of service. We accept cash, check, credit cards, and HSA/FSA cards.
+                  </p>
                 </CardContent>
               </Card>
 
