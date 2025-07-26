@@ -255,7 +255,7 @@ export default function NewPatients() {
                   className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = '/attached_assets/insurance-benefits-verification.pdf';
+                    link.href = '/insurance-benefits-verification.pdf';
                     link.download = 'Insurance_Benefits_Verification.pdf';
                     link.click();
                   }}
