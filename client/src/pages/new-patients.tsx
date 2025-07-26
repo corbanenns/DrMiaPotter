@@ -122,15 +122,15 @@ export default function NewPatients() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {appointmentProcess.map((step, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center flex flex-col h-full">
                 <div className="bg-sage-warm rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <span className="font-playfair text-2xl font-bold text-slate-deep">{step.step}</span>
                 </div>
                 <h3 className="font-playfair text-xl font-semibold text-slate-deep mb-3">
                   {step.title}
                 </h3>
-                <p className="text-stone-medium mb-4">{step.description}</p>
-                <div className="bg-cream-soft rounded-lg p-4 border border-stone-light">
+                <p className="text-stone-medium mb-4 flex-grow">{step.description}</p>
+                <div className="bg-cream-soft rounded-lg p-4 border border-stone-light mt-auto">
                   <p className="text-sm text-stone-medium">{step.details}</p>
                 </div>
               </div>
