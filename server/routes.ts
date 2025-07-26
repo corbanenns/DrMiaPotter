@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
+import { sendContactFormEmail, sendConfirmationEmail } from "./email";
 
 // Contact form schema for validation
 const contactFormSchema = z.object({
@@ -22,13 +23,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Validate the request body
       const validatedData = contactFormSchema.parse(req.body);
       
-      // In a production environment, this would:
-      // 1. Send a HIPAA-compliant email to Dr. Potter's office
-      // 2. Store the consultation request in a secure database
-      // 3. Potentially integrate with scheduling software
-      // 4. Send a confirmation email to the patient
-      
-      // For now, we'll log the submission (in production, use proper logging)
+      // Log the submission for tracking
       console.log("New consultation request:", {
         name: `${validatedData.firstName} ${validatedData.lastName}`,
         email: validatedData.email,
@@ -37,8 +32,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
         timestamp: new Date().toISOString()
       });
 
-      // Simulate processing time
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email to Dr. Potter
+      const emailSent = await sendContactFormEmail(validatedData);
+      
+      if (!emailSent) {
+        throw new Error("Failed to send notification email");
+      }
+
+      // Send confirmation email to patient
+      await sendConfirmationEmail(validatedData);
 
       // Send success response
       res.status(200).json({
@@ -64,7 +66,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         // Server error
         res.status(500).json({
           success: false,
-          message: "We're experiencing technical difficulties. Please call us directly at (458) 219-8915."
+          message: "We're experiencing technical difficulties. Please call us directly at (503) 856-2488."
         });
       }
     }

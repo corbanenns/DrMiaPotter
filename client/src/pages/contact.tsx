@@ -219,7 +219,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div>
+            <div id="contact-form">
               <Card className="border-stone-light">
                 <CardHeader>
                   <CardTitle className="font-playfair text-2xl text-slate-deep">
@@ -395,8 +395,8 @@ export default function Contact() {
 
                     <p className="text-center text-sm text-stone-medium">
                       Or call us directly at{" "}
-                      <a href="tel:4582198915" className="text-sage-warm hover:underline font-medium">
-                        (458) 219-8915
+                      <a href="tel:5038562488" className="text-sage-warm hover:underline font-medium">
+                        (503) 856-2488
                       </a>
                     </p>
                   </form>
@@ -483,10 +483,13 @@ export default function Contact() {
               variant="outline" 
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
-              onClick={() => window.location.href = 'mailto:info@growintegrativehealth.com'}
+              onClick={() => {
+                const contactForm = document.getElementById('contact-form');
+                contactForm?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               <Mail className="w-5 h-5 mr-2" />
-              Send Email
+              Contact Us
             </Button>
           </div>
         </div>

@@ -64,9 +64,11 @@ Preferred communication style: Simple, everyday language.
 1. Frontend form validation using Zod schemas
 2. POST request to `/api/contact` endpoint
 3. Server-side validation and logging
-4. Success response with reference ID
-5. Toast notification to user
-6. Form reset on successful submission
+4. SendGrid email delivery to drmiapotter@gmail.com
+5. Confirmation email sent to patient
+6. Success response with reference ID
+7. Toast notification to user
+8. Form reset on successful submission
 
 ### Database Schema
 - **Users Table**: Basic user authentication (currently minimal implementation)
@@ -86,6 +88,7 @@ Preferred communication style: Simple, everyday language.
 - **@radix-ui/***: Accessible UI primitives
 - **react-hook-form**: Form handling
 - **zod**: Runtime type validation
+- **@sendgrid/mail**: HIPAA-compliant email delivery service
 
 ### Development Tools
 - **TypeScript**: Type safety across the stack
@@ -94,7 +97,9 @@ Preferred communication style: Simple, everyday language.
 - **ESBuild**: Fast JavaScript bundling for production
 
 ### Medical/Compliance Considerations
-- HIPAA-compliant form handling (logged but not stored in current implementation)
+- HIPAA-compliant form handling with SendGrid email delivery
+- Secure contact form submissions sent directly to Dr. Potter (drmiapotter@gmail.com)
+- Automatic confirmation emails to patients
 - Professional medical website standards
 - Accessibility features through Radix UI components
 
