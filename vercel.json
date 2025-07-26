@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/public",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/attached_assets/(.*)",
+      "destination": "/attached_assets/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
