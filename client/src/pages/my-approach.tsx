@@ -233,10 +233,7 @@ export default function MyApproach() {
                 out a personalized treatment plan.
               </p>
               
-              <p className="text-lg text-slate-deep/90 leading-relaxed mb-6">
-                You'll leave with hope, understanding, and clear next steps. Most patients notice initial improvements 
-                in energy or sleep within 2-4 weeks, with significant changes typically occurring at 2-3 months.
-              </p>
+              <p className="text-lg text-slate-deep/90 leading-relaxed mb-6">You'll leave with hope, understanding, and clear next steps. Most patients notice initial improvements in energy or sleep within 2-4 weeks, with significant changes typically occurring at 3-6 months.</p>
               
               <div className="bg-sage-warm/10 rounded-lg p-6 mt-6">
                 <h4 className="font-semibold text-sage-warm mb-3">Before Your First Visit:</h4>
