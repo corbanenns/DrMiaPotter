@@ -225,10 +225,7 @@ export default function Contact() {
                   <CardTitle className="font-playfair text-2xl text-slate-deep">
                     Schedule Your Free Consultation
                   </CardTitle>
-                  <p className="text-stone-medium">
-                    Complete this form and we'll contact you within 24 hours to schedule your 
-                    complimentary 15-minute consultation.
-                  </p>
+                  <p className="text-stone-medium">Complete this form and we'll contact you within 48 hours to schedule your complimentary 15-minute consultation.</p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-4">
