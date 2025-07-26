@@ -406,7 +406,7 @@ export default function NewPatients() {
               },
               {
                 question: "What if I don't see improvements?",
-                answer: "We monitor progress closely and adjust treatment as needed. If you're not seeing the improvements we expect, we'll modify your protocol. Our goal is your success, and we're committed to finding what works for you."
+                answer: "Dr. Potter's primary goal is your health improvement, and she monitors your progress closely to ensure you're moving toward optimal wellness. If you're not seeing the improvements expected, she'll modify your protocol and collaborate with other medical practitioners as needed to support your healing journey. Dr. Potter works seamlessly with your existing healthcare team, sharing insights and coordinating care to give you the best possible outcomes."
               }
             ].map((faq, index) => (
               <Card key={index} className="border-stone-light">
