@@ -199,10 +199,7 @@ export default function NewPatients() {
 
               <div className="mt-8 p-4 bg-sage-warm/10 rounded-lg border border-sage-warm/20">
                 <h4 className="font-semibold text-slate-deep mb-2">Important Note:</h4>
-                <p className="text-sm text-stone-medium">
-                  Please arrive 15 minutes early to complete any remaining paperwork. 
-                  If you need to cancel or reschedule, please give us 24 hours notice.
-                </p>
+                <p className="text-sm text-stone-medium">Please arrive 10 minutes early to complete any remaining paperwork. If you need to cancel or reschedule, please give us 24 hours notice.</p>
               </div>
             </div>
           </div>
