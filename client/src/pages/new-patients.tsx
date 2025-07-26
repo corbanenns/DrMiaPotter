@@ -178,8 +178,7 @@ export default function NewPatients() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-deep mb-2">Personalized Treatment Plan</h3>
-                    <p className="text-stone-medium">Based on your unique situation, we'll develop 
-                    an integrated plan combining LENS neurofeedback with naturopathic treatments.</p>
+                    <p className="text-stone-medium">Based on your unique situation, we'll develop an integrated plan with naturopathic treatments.</p>
                   </div>
                 </div>
               </div>
