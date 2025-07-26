@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clock, FileText, DollarSign, Shield, CheckCircle, Phone, Download } from "lucide-react";
+import { Clock, FileText, DollarSign, Shield, CheckCircle, Phone, Download, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -14,14 +14,14 @@ export default function NewPatients() {
     {
       step: "1",
       title: "Schedule Your Consultation",
-      description: "Call (458) 219-8915 or use our online form to schedule your free 15-minute consultation.",
+      description: "Call (503) 856-2488 or use our online scheduler to book your free 15-minute consultation.",
       details: "During this brief call, we'll discuss your health concerns and determine if our approach is right for you."
     },
     {
       step: "2",
-      title: "Complete Intake Forms",
-      description: "Fill out comprehensive health history forms before your first appointment.",
-      details: "These forms help Dr. Potter understand your complete health picture and prepare for your visit."
+      title: "Receive Your Forms",
+      description: "Intake and consent forms will be emailed to you after scheduling.",
+      details: "All forms are managed through your ChARM patient portal for security and convenience."
     },
     {
       step: "3",
@@ -57,23 +57,37 @@ export default function NewPatients() {
     {
       service: "Initial Appointment",
       duration: "60 minutes",
-      price: "$350",
+      price: "$280",
       description: "Comprehensive evaluation with Dr. Potter",
       included: ["Complete health history", "Physical examination", "Treatment plan development", "Initial recommendations"]
     },
     {
       service: "LENS Neurofeedback",
       duration: "45 minutes",
-      price: "$120 per session",
+      price: "$125 per session",
       description: "Individual LENS neurofeedback sessions",
       included: ["Brain mapping assessment", "LENS session", "Progress tracking", "Session notes"]
     },
     {
-      service: "Follow-up Visits",
-      duration: "30-45 minutes", 
-      price: "$200",
+      service: "LENS Package",
+      duration: "5 sessions",
+      price: "$500 (Save $125)",
+      description: "Package of 5 LENS neurofeedback sessions",
+      included: ["5 complete LENS sessions", "Progress tracking", "Session notes", "Significant savings"]
+    },
+    {
+      service: "Follow-up Visits (30-40 min)",
+      duration: "30-40 minutes", 
+      price: "$168",
       description: "Ongoing care and treatment adjustments",
       included: ["Progress evaluation", "Treatment modifications", "Continued support", "Lab review if needed"]
+    },
+    {
+      service: "Follow-up Visits (45-60 min)",
+      duration: "45-60 minutes", 
+      price: "$231",
+      description: "Extended follow-up appointments",
+      included: ["Comprehensive evaluation", "Detailed treatment adjustments", "Extended consultation time", "Lab review"]
     }
   ];
 
@@ -204,31 +218,31 @@ export default function NewPatients() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-playfair text-4xl font-bold text-slate-deep mb-4">
-              Forms & Preparation
+              Forms & Patient Portal
             </h2>
             <p className="text-xl text-stone-medium max-w-3xl mx-auto">
-              To make the most of your appointment time, please complete these forms before your visit
+              All intake and consent forms will be emailed to you after scheduling and managed through your secure ChARM patient portal
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-stone-light">
               <CardHeader>
                 <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
                   <FileText className="w-6 h-6 text-sage-warm mr-3" />
-                  Health History Form
+                  ChARM Patient Portal
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-stone-medium mb-4">
-                  Comprehensive questionnaire about your medical history, current symptoms, and health goals.
+                  Your secure portal for accessing forms, scheduling, and communicating with Dr. Potter. All intake forms, consent documents, and health records are managed here.
                 </p>
                 <Button 
-                  variant="outline" 
-                  className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
+                  className="w-full bg-sage-warm text-slate-deep hover:bg-sage-warm/90"
+                  onClick={() => window.open('https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do', '_blank')}
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Form
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Access Patient Portal
                 </Button>
               </CardContent>
             </Card>
@@ -237,40 +251,25 @@ export default function NewPatients() {
               <CardHeader>
                 <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
                   <Shield className="w-6 h-6 text-sage-warm mr-3" />
-                  HIPAA & Consent Forms
+                  Insurance Benefits Verification
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-stone-medium mb-4">
-                  Privacy notices and treatment consent forms required for all new patients.
+                  Use this form to call your insurance company and verify your naturopathic coverage before your appointment.
                 </p>
                 <Button 
                   variant="outline" 
                   className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/attached_assets/insurance-benefits-verification.pdf';
+                    link.download = 'Insurance_Benefits_Verification.pdf';
+                    link.click();
+                  }}
                 >
                   <Download className="w-4 h-4 mr-2" />
-                  Download Forms
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-stone-light">
-              <CardHeader>
-                <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
-                  <DollarSign className="w-6 h-6 text-sage-warm mr-3" />
-                  Financial Policy
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-stone-medium mb-4">
-                  Information about our payment policies, insurance, and payment options.
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Policy
+                  Download Verification Form
                 </Button>
               </CardContent>
             </Card>
@@ -278,14 +277,15 @@ export default function NewPatients() {
 
           <div className="text-center mt-8">
             <p className="text-stone-medium mb-4">
-              Need help with forms or have questions? We're here to help.
+              Questions about forms or the patient portal? We're here to help.
             </p>
             <Button 
               variant="outline"
               className="border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
+              onClick={() => window.location.href = 'tel:5038562488'}
             >
               <Phone className="w-4 h-4 mr-2" />
-              Call (458) 219-8915
+              Call (503) 856-2488
             </Button>
           </div>
         </div>
@@ -304,33 +304,29 @@ export default function NewPatients() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {investmentOptions.map((option, index) => (
               <Card key={index} className="border-stone-light hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <CardTitle className="font-playfair text-xl text-slate-deep mb-2">
-                        {option.service}
-                      </CardTitle>
-                      <p className="text-stone-medium">{option.duration}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-playfair text-2xl font-bold text-sage-warm">
-                        {option.price}
-                      </div>
+                  <div className="text-center">
+                    <CardTitle className="font-playfair text-lg text-slate-deep mb-2">
+                      {option.service}
+                    </CardTitle>
+                    <p className="text-stone-medium text-sm">{option.duration}</p>
+                    <div className="font-playfair text-xl font-bold text-sage-warm mt-2">
+                      {option.price}
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-stone-medium mb-4">{option.description}</p>
+                  <p className="text-stone-medium mb-4 text-sm">{option.description}</p>
                   <div>
-                    <h4 className="font-semibold text-slate-deep mb-2">Includes:</h4>
+                    <h4 className="font-semibold text-slate-deep mb-2 text-sm">Includes:</h4>
                     <ul className="space-y-1">
                       {option.included.map((item, itemIndex) => (
                         <li key={itemIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-sage-warm flex-shrink-0" />
-                          <span className="text-stone-medium text-sm">{item}</span>
+                          <CheckCircle className="w-3 h-3 text-sage-warm flex-shrink-0" />
+                          <span className="text-stone-medium text-xs">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -350,16 +346,22 @@ export default function NewPatients() {
                 <h4 className="font-semibold text-slate-deep mb-4">Insurance Coverage</h4>
                 <div className="space-y-3 text-stone-medium">
                   <p>
-                    • We are not in-network with insurance companies but provide superbills for possible reimbursement
+                    <strong>Dr. Potter is in-network with:</strong><br/>
+                    • Aetna<br/>
+                    • EMBS<br/>
+                    • First Choice<br/>
+                    • Moda<br/>
+                    • Pacific Source (not including OHP)<br/>
+                    • Providence (not including OHP)
                   </p>
                   <p>
-                    • Many patients use HSA/FSA accounts for payment
+                    • For out-of-network plans, we provide superbills for reimbursement
                   </p>
                   <p>
-                    • Some insurance plans cover naturopathic care - check with your provider
+                    • HSA/FSA accounts accepted
                   </p>
                   <p>
-                    • LENS neurofeedback may be covered under mental health benefits
+                    • Use our Insurance Benefits Verification form above to check coverage
                   </p>
                 </div>
               </div>
@@ -453,15 +455,19 @@ export default function NewPatients() {
             <Button 
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
+              onClick={() => window.open('/schedule', '_self')}
             >
+              <Calendar className="w-5 h-5 mr-2" />
               Schedule Free Consultation
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.location.href = 'tel:5038562488'}
             >
-              Call (458) 219-8915
+              <Phone className="w-5 h-5 mr-2" />
+              Call (503) 856-2488
             </Button>
           </div>
           <p className="text-sm text-stone-medium mt-4">

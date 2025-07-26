@@ -8,6 +8,21 @@ This is a medical website for Dr. Camella (Mia) Potter, ND - Grow Integrative He
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes (January 26, 2025)
+
+- **Added "New Patients" to top navigation menu** - Now appears between "For Parents" and "Contact" in header
+- **Updated new-patients page with current pricing:**
+  - Initial appointment: $280 (was $350)
+  - LENS sessions: $125 (was $120) 
+  - LENS 5-session package: $500 (saves $125)
+  - Follow-up visits: $168 (30-40 min) or $231 (45-60 min)
+- **Removed all download forms** - Forms now emailed after scheduling and managed in ChARM portal
+- **Added Insurance Benefits Verification form** - Downloadable PDF for patients to verify coverage
+- **Updated insurance information** - Added Dr. Potter's in-network insurances (Aetna, EMBS, First Choice, Moda, Pacific Source, Providence)
+- **Streamlined contact page** - Removed email contact info and urgency fields, keeping only phone and contact form
+- **Updated all phone numbers** - Consistent (503) 856-2488 throughout site
+- **Enhanced Forms & Patient Portal section** - Emphasizes ChARM portal management over download forms
+
 ## System Architecture
 
 ### Frontend Architecture
