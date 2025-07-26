@@ -107,7 +107,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* What to Expect */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -138,7 +137,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* First Appointment Details */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -170,8 +168,7 @@ export default function NewPatients() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-deep mb-2">Physical Examination</h3>
-                    <p className="text-stone-medium">Thorough physical exam including vital signs, 
-                    neurological assessment, and any specialized testing as needed.</p>
+                    <p className="text-stone-medium">Thorough physical exam including vital signs and any specialized testing as needed.</p>
                   </div>
                 </div>
 
@@ -212,7 +209,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* Forms & Preparation */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -290,7 +286,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* Investment & Insurance */}
       <section className="py-16 bg-cream-soft">
         <div className="max-w-7xl mx-auto px-4">
@@ -387,7 +382,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* Frequently Asked Questions */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
@@ -441,7 +435,6 @@ export default function NewPatients() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-br from-sage-warm/10 to-cream-soft">
         <div className="max-w-4xl mx-auto px-4 text-center">
