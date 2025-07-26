@@ -66,11 +66,7 @@ export default function MyApproach() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-stone-light">
                 <h3 className="text-xl font-semibold text-sage-warm mb-4">Beyond Traditional Naturopathy</h3>
-                <p className="text-slate-deep/90 leading-relaxed">
-                  Many naturopaths focus primarily on physical symptoms. I combine advanced neurofeedback training 
-                  with naturopathic medicine, addressing both nervous system regulation and foundational physical 
-                  imbalances simultaneously.
-                </p>
+                <p className="text-slate-deep/90 leading-relaxed">Many functional medicine doctors focus primarily on physical symptoms. I combine advanced neurofeedback training with naturopathic medicine, addressing both nervous system regulation and foundational physical imbalances simultaneously.</p>
               </div>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-stone-light">

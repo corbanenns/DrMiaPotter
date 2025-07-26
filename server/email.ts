@@ -13,7 +13,6 @@ interface ContactFormData {
   phone: string;
   consultationType: string;
   preferredTime?: string;
-  urgency?: string;
   concerns: string;
   referralSource?: string;
 }
@@ -29,7 +28,6 @@ Patient Information:
 - Phone: ${formData.phone}
 - Preferred Consultation Type: ${formData.consultationType}
 - Preferred Time: ${formData.preferredTime || 'Not specified'}
-- Urgency Level: ${formData.urgency || 'Not specified'}
 - How they heard about us: ${formData.referralSource || 'Not specified'}
 
 Health Concerns:

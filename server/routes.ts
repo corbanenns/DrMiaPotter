@@ -11,7 +11,6 @@ const contactFormSchema = z.object({
   phone: z.string().min(10, "Valid phone number is required"),
   consultationType: z.enum(["phone", "in-person", "video"]),
   preferredTime: z.string().optional(),
-  urgency: z.string().optional(),
   concerns: z.string().min(10, "Please provide more details about your health concerns"),
   referralSource: z.string().optional()
 });

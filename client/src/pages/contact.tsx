@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, MapPin, Clock, Shield, Car, Mail, Calendar } from "lucide-react";
+import { Phone, MapPin, Clock, Shield, Car, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,7 +18,6 @@ export default function Contact() {
     phone: "",
     consultationType: "",
     preferredTime: "",
-    urgency: "",
     concerns: "",
     referralSource: ""
   });
@@ -52,7 +51,6 @@ export default function Contact() {
           phone: "",
           consultationType: "",
           preferredTime: "",
-          urgency: "",
           concerns: "",
           referralSource: ""
         });
@@ -116,31 +114,13 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-slate-deep mb-1">Phone</h3>
                       <a 
-                        href="tel:4582198915" 
+                        href="tel:5038562488" 
                         className="text-stone-medium hover:text-sage-warm transition-colors text-lg"
                       >
-                        (458) 219-8915
+                        (503) 856-2488
                       </a>
                       <p className="text-sm text-stone-medium mt-1">
                         Call for immediate assistance or to schedule your appointment
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-sage-warm/20 p-3 rounded-full">
-                      <Mail className="w-6 h-6 text-sage-warm" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-slate-deep mb-1">Email</h3>
-                      <a 
-                        href="mailto:info@growintegrativehealth.com" 
-                        className="text-stone-medium hover:text-sage-warm transition-colors"
-                      >
-                        info@growintegrativehealth.com
-                      </a>
-                      <p className="text-sm text-stone-medium mt-1">
-                        For general inquiries and non-urgent questions
                       </p>
                     </div>
                   </div>
@@ -346,22 +326,6 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <Label className="text-stone-medium font-medium">
-                        Urgency Level
-                      </Label>
-                      <Select onValueChange={(value) => handleInputChange("urgency", value)}>
-                        <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
-                          <SelectValue placeholder="Select urgency level" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="routine">Routine - within 2 weeks</SelectItem>
-                          <SelectItem value="soon">Soon - within 1 week</SelectItem>
-                          <SelectItem value="urgent">Urgent - within 2-3 days</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div>
                       <Label htmlFor="concerns" className="text-stone-medium font-medium">
                         Brief Description of Health Concerns *
                       </Label>
@@ -374,12 +338,6 @@ export default function Contact() {
                         className="mt-2 border-stone-light focus:border-sage-warm"
                         placeholder="Please briefly describe your main health concerns and what brought you to seek natural healthcare. This helps Dr. Potter prepare for your consultation."
                       />
-                    </div>
-
-                    <div className="text-sm text-stone-medium bg-white p-4 rounded border border-sage-warm/20">
-                      <Shield className="w-4 h-4 text-sage-warm mr-2 inline" />
-                      <strong>Privacy Protected:</strong> Your information is protected by HIPAA and will never be shared with third parties. 
-                      All communications are confidential and secure.
                     </div>
 
                     <Button
@@ -467,7 +425,7 @@ export default function Contact() {
             Don't hesitate to reach out. Dr. Potter and her team are committed to providing 
             exceptional care and support throughout your healing journey.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex justify-center">
             <Button 
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
@@ -475,18 +433,6 @@ export default function Contact() {
             >
               <Phone className="w-5 h-5 mr-2" />
               Call Now: (503) 856-2488
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
-              onClick={() => {
-                const contactForm = document.getElementById('contact-form');
-                contactForm?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Contact Us
             </Button>
           </div>
         </div>
