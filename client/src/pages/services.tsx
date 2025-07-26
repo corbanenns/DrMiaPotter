@@ -27,7 +27,7 @@ export default function Services() {
         "Herbal medicine prescriptions",
         "Lifestyle and stress management guidance"
       ],
-      process: "Your first visit includes a comprehensive 60-90 minute consultation covering your complete health history, current symptoms, and health goals. We'll develop a personalized treatment plan using natural therapies to restore your body's optimal function."
+      process: "Your first visit includes a comprehensive 60 minute consultation covering your complete health history, current symptoms, and health goals. We'll develop a personalized treatment plan using natural therapies to restore your body's optimal function."
     }
   ];
 
