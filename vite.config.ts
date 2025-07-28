@@ -23,4 +23,7 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  preview: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+  },
 });
