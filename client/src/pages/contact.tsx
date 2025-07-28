@@ -30,13 +30,36 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Validate required fields
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.consultationType || !formData.concerns) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields before submitting.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      // Use Formspree for reliable form submission
+      const formData_encoded = new FormData();
+      formData_encoded.append('firstName', formData.firstName);
+      formData_encoded.append('lastName', formData.lastName);
+      formData_encoded.append('email', formData.email);
+      formData_encoded.append('phone', formData.phone);
+      formData_encoded.append('consultationType', formData.consultationType);
+      formData_encoded.append('preferredTime', formData.preferredTime || 'Not specified');
+      formData_encoded.append('concerns', formData.concerns);
+      formData_encoded.append('referralSource', formData.referralSource || 'Not specified');
+      formData_encoded.append('_subject', `New Consultation Request - ${formData.firstName} ${formData.lastName}`);
+
+      const response = await fetch("https://formspree.io/f/mblkydaw", {
         method: "POST",
+        body: formData_encoded,
         headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+          'Accept': 'application/json'
+        }
       });
 
       if (response.ok) {
@@ -58,9 +81,10 @@ export default function Contact() {
         throw new Error("Failed to submit form");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
-        description: "There was a problem submitting your request. Please call us directly at (458) 219-8915.",
+        description: "There was a problem submitting your request. Please call us directly at (503) 856-2488.",
         variant: "destructive",
       });
     } finally {
