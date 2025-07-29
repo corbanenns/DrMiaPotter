@@ -11,10 +11,16 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dr-mia-potter.vercel.app">
     <link rel="canonical" href="https://dr-mia-potter.vercel.app">
+    <!-- Cache busting for contact form fix -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- EmailJS SDK for backup contact form -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
     <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>

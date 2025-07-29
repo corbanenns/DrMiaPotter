@@ -26,9 +26,83 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const submitToFormspree = async () => {
+    const formData_encoded = new FormData();
+    formData_encoded.append('firstName', formData.firstName);
+    formData_encoded.append('lastName', formData.lastName);
+    formData_encoded.append('email', formData.email);
+    formData_encoded.append('phone', formData.phone);
+    formData_encoded.append('consultationType', formData.consultationType);
+    formData_encoded.append('preferredTime', formData.preferredTime || 'Not specified');
+    formData_encoded.append('concerns', formData.concerns);
+    formData_encoded.append('referralSource', formData.referralSource || 'Not specified');
+    formData_encoded.append('_subject', `New Consultation Request - ${formData.firstName} ${formData.lastName}`);
+
+    const response = await fetch("https://formspree.io/f/mblkydaw", {
+      method: "POST",
+      body: formData_encoded,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Formspree failed: ${response.status}`);
+    }
+    return response;
+  };
+
+  const submitToEmailJS = async () => {
+    // @ts-ignore - EmailJS is loaded via script tag
+    if (typeof emailjs === 'undefined') {
+      throw new Error('EmailJS not loaded');
+    }
+
+    const templateParams = {
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      phone: formData.phone,
+      consultation_type: formData.consultationType,
+      preferred_time: formData.preferredTime || 'Not specified',
+      concerns: formData.concerns,
+      referral_source: formData.referralSource || 'Not specified',
+      to_email: 'drmiapotter@gmail.com'
+    };
+
+    // @ts-ignore
+    return emailjs.send('service_contact', 'template_contact', templateParams, 'YOUR_PUBLIC_KEY');
+  };
+
+  const submitToWeb3Forms = async () => {
+    const formData_encoded = new FormData();
+    formData_encoded.append('access_key', 'c8b5e4a2-8f3d-4e7b-9c1a-5d6f8e9a2b3c'); // Web3Forms access key
+    formData_encoded.append('name', `${formData.firstName} ${formData.lastName}`);
+    formData_encoded.append('email', formData.email);
+    formData_encoded.append('phone', formData.phone);
+    formData_encoded.append('consultation_type', formData.consultationType);
+    formData_encoded.append('preferred_time', formData.preferredTime || 'Not specified');
+    formData_encoded.append('concerns', formData.concerns);
+    formData_encoded.append('referral_source', formData.referralSource || 'Not specified');
+    formData_encoded.append('subject', `New Consultation Request - ${formData.firstName} ${formData.lastName}`);
+    formData_encoded.append('botcheck', ''); // Honeypot spam protection
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData_encoded
+    });
+
+    if (!response.ok) {
+      throw new Error(`Web3Forms failed: ${response.status}`);
+    }
+    return response;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    console.log("🚀 CONTACT FORM SUBMISSION STARTED - v2.0");
+    console.log("Form data:", formData);
 
     // Validate required fields
     if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.consultationType || !formData.concerns) {
@@ -41,55 +115,55 @@ export default function Contact() {
       return;
     }
 
-    try {
-      // Use Formspree for reliable form submission
-      const formData_encoded = new FormData();
-      formData_encoded.append('firstName', formData.firstName);
-      formData_encoded.append('lastName', formData.lastName);
-      formData_encoded.append('email', formData.email);
-      formData_encoded.append('phone', formData.phone);
-      formData_encoded.append('consultationType', formData.consultationType);
-      formData_encoded.append('preferredTime', formData.preferredTime || 'Not specified');
-      formData_encoded.append('concerns', formData.concerns);
-      formData_encoded.append('referralSource', formData.referralSource || 'Not specified');
-      formData_encoded.append('_subject', `New Consultation Request - ${formData.firstName} ${formData.lastName}`);
+    // Try multiple services in order of preference
+    const services = [
+      { name: 'Formspree', submit: submitToFormspree },
+      { name: 'Web3Forms', submit: submitToWeb3Forms },
+      { name: 'EmailJS', submit: submitToEmailJS }
+    ];
 
-      const response = await fetch("https://formspree.io/f/mblkydaw", {
-        method: "POST",
-        body: formData_encoded,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    let lastError = null;
+    let success = false;
 
-      if (response.ok) {
-        toast({
-          title: "Consultation Request Sent",
-          description: "We'll contact you within 24 hours to schedule your free consultation.",
-        });
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          consultationType: "",
-          preferredTime: "",
-          concerns: "",
-          referralSource: ""
-        });
-      } else {
-        throw new Error("Failed to submit form");
+    for (const service of services) {
+      try {
+        console.log(`Attempting to submit via ${service.name}...`);
+        await service.submit();
+        console.log(`✅ Success with ${service.name}`);
+        success = true;
+        break;
+      } catch (error) {
+        console.error(`❌ ${service.name} failed:`, error);
+        lastError = error;
+        continue;
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
+    }
+
+    if (success) {
+      toast({
+        title: "Consultation Request Sent",
+        description: "We'll contact you within 24 hours to schedule your free consultation.",
+      });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        consultationType: "",
+        preferredTime: "",
+        concerns: "",
+        referralSource: ""
+      });
+    } else {
+      console.error("All form submission services failed:", lastError);
       toast({
         title: "Error",
         description: "There was a problem submitting your request. Please call us directly at (503) 856-2488.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
+
+    setIsSubmitting(false);
   };
 
   const officeHours = [
