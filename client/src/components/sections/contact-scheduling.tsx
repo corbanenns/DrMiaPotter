@@ -1,68 +1,11 @@
-import { useState } from "react";
 import { Phone, MapPin, Clock, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
 
 export default function ContactScheduling() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    consultationType: "",
-    concerns: ""
-  });
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Consultation Request Sent",
-          description: "We'll contact you within 24 hours to schedule your free consultation.",
-        });
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          consultationType: "",
-          concerns: ""
-        });
-      } else {
-        throw new Error("Failed to submit form");
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "There was a problem submitting your request. Please call us directly at (458) 219-8915.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="contact" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -89,8 +32,8 @@ export default function ContactScheduling() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-deep">Phone</div>
-                    <a 
-                      href="tel:5038562488" 
+                    <a
+                      href="tel:5038562488"
                       className="text-stone-medium hover:text-sage-warm transition-colors"
                     >
                       (503) 856-2488
@@ -149,7 +92,9 @@ export default function ContactScheduling() {
                 Schedule Your Consultation
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+                <input type="hidden" name="access_key" value="6d6b1ecc-a59b-4ef8-bd19-301ae29f07a5" />
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName" className="text-stone-medium font-medium">
@@ -157,10 +102,9 @@ export default function ContactScheduling() {
                     </Label>
                     <Input
                       id="firstName"
+                      name="firstName"
                       type="text"
                       required
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange("firstName", e.target.value)}
                       className="mt-2 border-stone-light focus:border-sage-warm"
                       placeholder="Your first name"
                     />
@@ -171,10 +115,9 @@ export default function ContactScheduling() {
                     </Label>
                     <Input
                       id="lastName"
+                      name="lastName"
                       type="text"
                       required
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange("lastName", e.target.value)}
                       className="mt-2 border-stone-light focus:border-sage-warm"
                       placeholder="Your last name"
                     />
@@ -187,10 +130,9 @@ export default function ContactScheduling() {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
                     className="mt-2 border-stone-light focus:border-sage-warm"
                     placeholder="your.email@example.com"
                   />
@@ -202,10 +144,9 @@ export default function ContactScheduling() {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     required
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
                     className="mt-2 border-stone-light focus:border-sage-warm"
                     placeholder="(555) 123-4567"
                   />
@@ -215,7 +156,7 @@ export default function ContactScheduling() {
                   <Label className="text-stone-medium font-medium">
                     Preferred Consultation Type
                   </Label>
-                  <Select onValueChange={(value) => handleInputChange("consultationType", value)}>
+                  <Select name="consultationType">
                     <SelectTrigger className="mt-2 border-stone-light focus:border-sage-warm">
                       <SelectValue placeholder="Select consultation type" />
                     </SelectTrigger>
@@ -233,9 +174,8 @@ export default function ContactScheduling() {
                   </Label>
                   <Textarea
                     id="concerns"
+                    name="concerns"
                     rows={4}
-                    value={formData.concerns}
-                    onChange={(e) => handleInputChange("concerns", e.target.value)}
                     className="mt-2 border-stone-light focus:border-sage-warm"
                     placeholder="Please briefly describe what brought you to seek natural healthcare..."
                   />
@@ -248,10 +188,9 @@ export default function ContactScheduling() {
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
                   className="w-full bg-sage-warm text-slate-deep hover:bg-sage-warm/90 py-4 rounded-lg font-semibold text-lg"
                 >
-                  {isSubmitting ? "Submitting..." : "Schedule Free Consultation"}
+                  Schedule Free Consultation
                 </Button>
               </form>
             </div>
