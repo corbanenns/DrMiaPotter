@@ -26,23 +26,38 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const form = e.currentTarget;
+    const formDataToSend = new FormData();
+    
+    // Add Web3Forms access key
+    formDataToSend.append('access_key', '6d6b1ecc-a59b-4ef8-bd19-301ae29f07a5');
+    
+    // Add all form fields
+    formDataToSend.append('firstName', formData.firstName);
+    formDataToSend.append('lastName', formData.lastName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('consultationType', formData.consultationType);
+    formDataToSend.append('preferredTime', formData.preferredTime);
+    formDataToSend.append('concerns', formData.concerns);
+    formDataToSend.append('referralSource', formData.referralSource);
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         toast({
           title: "Consultation Request Sent",
-          description: "We'll contact you within 24 hours to schedule your free consultation.",
+          description: "We'll contact you within 48 hours to schedule your free consultation.",
         });
         setFormData({
           firstName: "",
@@ -55,12 +70,12 @@ export default function Contact() {
           referralSource: ""
         });
       } else {
-        throw new Error("Failed to submit form");
+        throw new Error(data.message || "Failed to submit form");
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was a problem submitting your request. Please call us directly at (458) 219-8915.",
+        description: "There was a problem submitting your request. Please call us directly at (503) 856-2488.",
         variant: "destructive",
       });
     } finally {
@@ -258,6 +273,7 @@ export default function Contact() {
                         </Label>
                         <Input
                           id="firstName"
+                          name="firstName"
                           type="text"
                           required
                           value={formData.firstName}
@@ -272,6 +288,7 @@ export default function Contact() {
                         </Label>
                         <Input
                           id="lastName"
+                          name="lastName"
                           type="text"
                           required
                           value={formData.lastName}
@@ -288,6 +305,7 @@ export default function Contact() {
                       </Label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
                         required
                         value={formData.email}
@@ -303,6 +321,7 @@ export default function Contact() {
                       </Label>
                       <Input
                         id="phone"
+                        name="phone"
                         type="tel"
                         required
                         value={formData.phone}
@@ -373,6 +392,7 @@ export default function Contact() {
                       </Label>
                       <Textarea
                         id="concerns"
+                        name="concerns"
                         rows={4}
                         required
                         value={formData.concerns}
