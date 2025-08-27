@@ -48,7 +48,7 @@ export default function AboutDrPotter() {
               </h3>
               <ul className="space-y-1 text-stone-medium text-sm">
                 <li>• Full hour appointments for new patients</li>
-                <li>• Treats ages 6 through adults</li>
+                <li>• Treats ages 1 through adults</li>
                 <li>• 12 years combining LENS with naturopathic medicine</li>
                 <li>• Addresses 4 layers: physical, mental, spiritual, energetic</li>
               </ul>

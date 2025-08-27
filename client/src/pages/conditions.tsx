@@ -81,7 +81,7 @@ export default function Conditions() {
         {
           name: "Menopause Support",
           symptoms: ["Hot flashes", "Night sweats", "Mood changes", "Sleep disturbances"],
-          approach: "Natural hormone replacement and symptom management for smooth transitions."
+          approach: "Hormone replacement, other alternative support, and symptom management for smooth transitions."
         }
       ]
     },
@@ -101,9 +101,9 @@ export default function Conditions() {
           approach: "Natural anti-inflammatory approaches and immune system modulation."
         },
         {
-          name: "Lupus Support",
-          symptoms: ["Fatigue", "Joint pain", "Skin rashes", "Organ involvement"],
-          approach: "Gentle immune support and symptom management through natural therapies."
+          name: "Ulcerative Colitis/Crohn's",
+          symptoms: ["Diarrhea", "Frequent stools", "Urgency", "Stomach pain"],
+          approach: "Soothe the gut and regulate the immune system with nutrition and other natural therapies."
         },
         {
           name: "Multiple Sclerosis",

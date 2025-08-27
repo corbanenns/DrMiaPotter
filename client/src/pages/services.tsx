@@ -48,7 +48,7 @@ export default function Services() {
       icon: Beaker,
       title: "Autoimmune Support",
       description: "Natural approaches to autoimmune conditions",
-      conditions: ["Hashimoto's", "Rheumatoid arthritis", "Lupus", "MS support"]
+      conditions: ["Hashimoto's", "Rheumatoid arthritis", "Ulcerative Colitis/Crohn's", "MS support"]
     },
     {
       icon: Zap,
@@ -197,14 +197,14 @@ export default function Services() {
                 description: "Comprehensive 60 minute evaluation of your health history and current concerns"
               },
               {
-                step: "2", 
-                title: "Assessment & Testing",
-                description: "Functional lab testing and LENS brain mapping to identify underlying imbalances"
+                step: "2",
+                title: "Physical examination & lab testing (if needed)",
+                description: "Physical exam with labs ordered only as needed to better understand underlying imbalances"
               },
               {
                 step: "3",
                 title: "Personalized Plan",
-                description: "Customized whole-system approach based on your unique story, addressing root causes across all aspects of your health"
+                description: "Customized whole-system approach that may include LENS Neurofeedback, tailored to your unique story and root causes across all aspects of your health"
               },
               {
                 step: "4",

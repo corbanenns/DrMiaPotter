@@ -3,6 +3,8 @@ import { Clock, FileText, DollarSign, Shield, CheckCircle, Phone, Download, Cale
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+import consentPdf from "@assets/NP__Consent_to_Treat__Office_Policies_Questionnaire (2)_1753490362953.pdf";
+
 export default function NewPatients() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
@@ -77,14 +79,14 @@ export default function NewPatients() {
     },
     {
       service: "Follow-up Visits (30-40 min)",
-      duration: "30-40 minutes", 
+      duration: "30-40 minutes",
       price: "$168",
       description: "Ongoing care and treatment adjustments",
       included: ["Progress evaluation", "Treatment modifications", "Continued support", "Lab review if needed"]
     },
     {
       service: "Follow-up Visits (45-60 min)",
-      duration: "45-60 minutes", 
+      duration: "45-60 minutes",
       price: "$231",
       description: "Extended follow-up appointments",
       included: ["Comprehensive evaluation", "Detailed treatment adjustments", "Extended consultation time", "Lab review"]
@@ -101,7 +103,7 @@ export default function NewPatients() {
               Welcome New Patients
             </h1>
             <p className="text-xl text-stone-medium max-w-3xl mx-auto leading-relaxed">
-              Starting your healing journey with Dr. Potter is simple. Here's everything you need to know 
+              Starting your healing journey with Dr. Potter is simple. Here's everything you need to know
               about your first visit and what to expect from our comprehensive approach to health.
             </p>
           </div>
@@ -115,7 +117,7 @@ export default function NewPatients() {
               What to Expect
             </h2>
             <p className="text-xl text-stone-medium max-w-3xl mx-auto">
-              Your journey to optimal health begins with understanding and personalized care
+              Allow 30–45 minutes to complete thorough paperwork. Your journey to optimal health begins with understanding and personalized care
             </p>
           </div>
 
@@ -146,7 +148,7 @@ export default function NewPatients() {
                 Your First Appointment
               </h2>
               <p className="text-lg text-stone-medium leading-relaxed">
-                Unlike rushed conventional appointments, Dr. Potter dedicates a full 60 minutes 
+                Unlike rushed conventional appointments, Dr. Potter dedicates a full 60 minutes
                 to truly understand your health story and develop a personalized treatment plan.
               </p>
 
@@ -157,7 +159,7 @@ export default function NewPatients() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-deep mb-2">Comprehensive Health History</h3>
-                    <p className="text-stone-medium">We'll discuss your current concerns, past medical history, 
+                    <p className="text-stone-medium">We'll discuss your current concerns, past medical history,
                     family history, lifestyle factors, and health goals in detail.</p>
                   </div>
                 </div>
@@ -227,9 +229,9 @@ export default function NewPatients() {
               </CardHeader>
               <CardContent>
                 <p className="text-stone-medium mb-4">
-                  Your secure portal for accessing forms, scheduling, and communicating with Dr. Potter. All intake forms, consent documents, and health records are managed here.
+                  Your secure portal for accessing forms, scheduling, and communicating with Dr. Potter. All intake forms, consent documents (including Consent to Treat & Office Policies), and health records are managed here.
                 </p>
-                <Button 
+                <Button
                   className="w-full bg-sage-warm text-slate-deep hover:bg-sage-warm/90"
                   onClick={() => window.open('https://accounts.charmtracker.com/signin?hide_signup=true&hide_secure=true&hide_gsignup=true&servicename=charmphr&serviceurl=https%3A%2F%2Fphr2.charmtracker.com%2Fmain.do', '_blank')}
                 >
@@ -250,8 +252,8 @@ export default function NewPatients() {
                 <p className="text-stone-medium mb-4">
                   Use this form to call your insurance company and verify your naturopathic coverage before your appointment.
                 </p>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
                   onClick={() => {
                     const link = document.createElement('a');
@@ -264,14 +266,45 @@ export default function NewPatients() {
                   Download Verification Form
                 </Button>
               </CardContent>
+              </Card>
+
+            <Card className="border-stone-light">
+              <CardHeader>
+                <CardTitle className="font-playfair text-xl text-slate-deep flex items-center">
+                  <Shield className="w-6 h-6 text-sage-warm mr-3" />
+                  Consent to Treat & Office Policies
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-stone-medium mb-4">
+                  Please review and sign prior to your appointment. You can also download a copy for your records.
+                </p>
+                <div className="flex gap-3">
+                  <Button
+                    variant="outline"
+                    className="w-full border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = consentPdf;
+                      link.download = 'Consent_to_Treat_and_Office_Policies.pdf';
+                      link.click();
+                    }}
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Consent & Policies
+                  </Button>
+                </div>
+              </CardContent>
             </Card>
+
+
           </div>
 
           <div className="text-center mt-8">
             <p className="text-stone-medium mb-4">
               Questions about forms or the patient portal? We're here to help.
             </p>
-            <Button 
+            <Button
               variant="outline"
               className="border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
               onClick={() => window.location.href = 'tel:5038562488'}
@@ -290,7 +323,7 @@ export default function NewPatients() {
               Investment in Your Health
             </h2>
             <p className="text-xl text-stone-medium max-w-3xl mx-auto">
-              Transparent pricing for comprehensive care. We believe in providing value through 
+              Transparent pricing for comprehensive care. We believe in providing value through
               personalized attention and effective treatment.
             </p>
           </div>
@@ -331,7 +364,7 @@ export default function NewPatients() {
             <h3 className="font-playfair text-2xl font-semibold text-slate-deep mb-6 text-center">
               Insurance & Payment Options
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h4 className="font-semibold text-slate-deep mb-4">Insurance Coverage</h4>
@@ -356,7 +389,7 @@ export default function NewPatients() {
                   </p>
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold text-slate-deep mb-4">Payment Methods</h4>
                 <div className="space-y-3 text-stone-medium">
@@ -370,8 +403,8 @@ export default function NewPatients() {
 
             <div className="mt-6 p-4 bg-sage-warm/10 rounded-lg border border-sage-warm/20">
               <p className="text-stone-medium text-sm">
-                <strong>Investment Perspective:</strong> While our services require an upfront investment, 
-                many patients find that addressing root causes leads to long-term savings on medications, 
+                <strong>Investment Perspective:</strong> While our services require an upfront investment,
+                many patients find that addressing root causes leads to long-term savings on medications,
                 specialists, and ongoing health issues.
               </p>
             </div>
@@ -393,6 +426,15 @@ export default function NewPatients() {
           <div className="space-y-4">
             {[
               {
+                question: "Is Dr. Potter a primary care physician (PCP)?",
+                answer: "No, Dr. Potter is considered a specialist with most insurance companies. She can order labs and imaging like a PCP, but does not serve patients in that role. She is not set-up to perform urine tests, annual exams or physicals for athletes."
+              },
+              {
+                question: "Are there cancellation fees?",
+                answer: "We request that you cancel within 24 hours during the week and by Friday at 4 PM for Monday appointments through the patient portal (appointment section, cancel button to the right), the text reminder you receive, voicemail reminder, or by calling us. If this does not occur, $150 will be charged for new and follow-up appointments and $75 for LENS appointments."
+              },
+
+              {
                 question: "How long does treatment typically take?",
                 answer: "Treatment length varies by individual and condition. Many patients see improvements within 4-6 weeks, with optimal results often achieved in 3-6 months. Some conditions may require longer treatment."
               },
@@ -410,7 +452,7 @@ export default function NewPatients() {
               }
             ].map((faq, index) => (
               <Card key={index} className="border-stone-light">
-                <CardHeader 
+                <CardHeader
                   className="cursor-pointer"
                   onClick={() => toggleSection(`faq-${index}`)}
                 >
@@ -441,7 +483,7 @@ export default function NewPatients() {
             Take the first step toward optimal health. Schedule your free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
               onClick={() => window.open('/schedule', '_self')}
@@ -449,8 +491,8 @@ export default function NewPatients() {
               <Calendar className="w-5 h-5 mr-2" />
               Schedule Free Consultation
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
               onClick={() => window.location.href = 'tel:5038562488'}

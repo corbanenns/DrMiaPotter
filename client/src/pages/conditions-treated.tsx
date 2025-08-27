@@ -52,7 +52,7 @@ export default function ConditionsTreated() {
         "Hashimoto's thyroiditis",
         "Rheumatoid arthritis",
         "Multiple sclerosis",
-        "Lupus",
+        "Ulcerative colitis/Crohn's",
         "Celiac disease",
         "Psoriasis and eczema",
         "Fibromyalgia",
