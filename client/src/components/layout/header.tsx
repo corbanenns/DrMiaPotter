@@ -28,11 +28,17 @@ export default function Header() {
       {/* Top bar */}
       <div className="bg-slate-deep text-white py-2">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm space-y-2 sm:space-y-0">
-          <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
-            <span className="flex items-center">
-              <MapPin className="w-4 h-4 mr-2" />
-              1655 SW Highland Ave, Suite 5, Redmond, OR 97756
-            </span>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-6">
+            <div className="flex flex-col items-center sm:items-start">
+              <span className="flex items-center">
+                <MapPin className="w-4 h-4 mr-2" />
+                1655 SW Highland Ave, Suite 5, Redmond, OR 97756
+              </span>
+              <span className="flex items-center">
+                <MapPin className="w-4 h-4 mr-2" />
+                LENS Only in Salem – 1995 Commercial St. SE, Salem OR 97302
+              </span>
+            </div>
             <span className="flex items-center">
               <Clock className="w-4 h-4 mr-2" />
               Mon-Thu: 9AM-5PM

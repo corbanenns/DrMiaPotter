@@ -21,7 +21,7 @@ export default function ConditionsTreated() {
     {
       icon: Shield,
       title: "Autoimmune Conditions",
-      items: ["Hashimoto's Thyroiditis", "Rheumatoid Arthritis", "Lupus & MS", "Inflammatory Conditions"]
+      items: ["Hashimoto's Thyroiditis", "Rheumatoid Arthritis", "Ulcerative Colitis/Crohn's & MS", "Inflammatory Conditions"]
     }
   ];
 

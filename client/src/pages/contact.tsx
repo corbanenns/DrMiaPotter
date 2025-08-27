@@ -32,10 +32,10 @@ export default function Contact() {
 
     const form = e.currentTarget;
     const formDataToSend = new FormData();
-    
+
     // Add Web3Forms access key
     formDataToSend.append('access_key', '6d6b1ecc-a59b-4ef8-bd19-301ae29f07a5');
-    
+
     // Add all form fields
     formDataToSend.append('firstName', formData.firstName);
     formDataToSend.append('lastName', formData.lastName);
@@ -78,9 +78,9 @@ export default function Contact() {
         description: "There was a problem submitting your request. Please call us directly at (503) 856-2488.",
         variant: "destructive",
       });
-    } finally {
-      setIsSubmitting(false);
     }
+
+    setIsSubmitting(false);
   };
 
   const officeHours = [
