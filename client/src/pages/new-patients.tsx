@@ -342,8 +342,7 @@ export default function NewPatients() {
                     • EMBS<br/>
                     • First Choice<br/>
                     • Moda<br/>
-                    • Pacific Source (not including OHP)<br/>
-                    • Providence (not including OHP)
+                    • Pacific Source (not including OHP)
                   </p>
                   <p>
                     • For out-of-network plans, we provide superbills for reimbursement
