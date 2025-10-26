@@ -65,7 +65,7 @@ export default function NewPatients() {
     },
     {
       service: "LENS Neurofeedback",
-      duration: "45 minutes",
+      duration: "30 minutes",
       price: "$125 per session",
       description: "Individual LENS neurofeedback sessions",
       included: ["Brain mapping assessment", "LENS session", "Progress tracking", "Session notes"]
