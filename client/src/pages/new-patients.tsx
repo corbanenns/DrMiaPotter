@@ -80,14 +80,14 @@ export default function NewPatients() {
     {
       service: "Follow-up Visits (30-40 min)",
       duration: "30-40 minutes",
-      price: "$168",
+      price: "$185",
       description: "Ongoing care and treatment adjustments",
       included: ["Progress evaluation", "Treatment modifications", "Continued support", "Lab review if needed"]
     },
     {
       service: "Follow-up Visits (45-60 min)",
       duration: "45-60 minutes",
-      price: "$231",
+      price: "$320",
       description: "Extended follow-up appointments",
       included: ["Comprehensive evaluation", "Detailed treatment adjustments", "Extended consultation time", "Lab review"]
     }

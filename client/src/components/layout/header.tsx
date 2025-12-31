@@ -34,10 +34,6 @@ export default function Header() {
                 <MapPin className="w-4 h-4 mr-2" />
                 1655 SW Highland Ave, Suite 5, Redmond, OR 97756
               </span>
-              <span className="flex items-center">
-                <MapPin className="w-4 h-4 mr-2" />
-                LENS Only in Salem – 1995 Commercial St. SE, Salem OR 97302
-              </span>
             </div>
             <span className="flex items-center">
               <Clock className="w-4 h-4 mr-2" />
