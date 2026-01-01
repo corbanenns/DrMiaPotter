@@ -81,7 +81,7 @@ export default function Conditions() {
         {
           name: "Menopause Support",
           symptoms: ["Hot flashes", "Night sweats", "Mood changes", "Sleep disturbances"],
-          approach: "Hormone replacement, other alternative support, and symptom management for smooth transitions."
+          approach: "Alternative support and symptom management for smooth transitions and if needed, hormone replacement."
         }
       ]
     },

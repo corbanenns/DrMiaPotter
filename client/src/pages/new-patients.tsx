@@ -59,7 +59,7 @@ export default function NewPatients() {
     {
       service: "Initial Appointment",
       duration: "60 minutes",
-      price: "$280",
+      price: "$320",
       description: "Comprehensive evaluation with Dr. Potter",
       included: ["Complete health history", "Physical examination", "Treatment plan development", "Initial recommendations"]
     },
@@ -87,7 +87,7 @@ export default function NewPatients() {
     {
       service: "Follow-up Visits (45-60 min)",
       duration: "45-60 minutes",
-      price: "$320",
+      price: "$231",
       description: "Extended follow-up appointments",
       included: ["Comprehensive evaluation", "Detailed treatment adjustments", "Extended consultation time", "Lab review"]
     }
