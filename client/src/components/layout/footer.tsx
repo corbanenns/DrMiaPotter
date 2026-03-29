@@ -80,7 +80,7 @@ export default function Footer() {
               <div className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 text-sage-warm mt-1" />
                 <div>
-                  1655 SW Highland Ave, Suite 5<br />
+                  405 SW 6th St.<br />
                   Redmond, OR 97756
                 </div>
               </div>

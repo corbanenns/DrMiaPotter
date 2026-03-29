@@ -79,24 +79,24 @@ export default function Billing() {
               <p className="text-stone-medium mb-4">
                 Have questions about our fees or need to discuss payment options?
               </p>
-              <a 
-                href="tel:5038562488"
+              <a
+                href="tel:9712088915"
                 className="text-sage-warm hover:text-sage-warm/80 font-semibold text-lg"
               >
-                (503) 856-2488
+                (971) 208-8915
               </a>
             </div>
 
-            {/* Cash Prices */}
+            {/* Time of Service Rates */}
             <div className="bg-cream-soft rounded-lg p-8 border border-stone-light">
               <div className="flex items-center space-x-3 mb-4">
                 <DollarSign className="w-6 h-6 text-sage-warm" />
                 <h3 className="font-playfair text-xl font-bold text-slate-deep">
-                  Cash Pricing
+                  Time of Service Rates
                 </h3>
               </div>
               <p className="text-stone-medium">
-                All prices listed are our standard cash rates. Ask about package discounts and payment plans.
+                All prices listed are our standard time of service rates. Ask about package discounts and payment plans.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function Billing() {
                 </h3>
               </div>
               <p className="text-stone-medium text-sm">
-                We are in-network with most major insurances. Contact us to verify coverage.
+                We are in-network with Aetna, EMBS, First Choice, Moda and Pacific Source. Contact your insurance company to verify coverage. See insurance verification form under new patients tab.
               </p>
             </div>
           </div>

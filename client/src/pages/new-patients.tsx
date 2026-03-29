@@ -15,9 +15,9 @@ export default function NewPatients() {
   const appointmentProcess = [
     {
       step: "1",
-      title: "Schedule Your Consultation",
-      description: "Call (503) 856-2488 or use our online scheduler to book your free 15-minute consultation.",
-      details: "During this brief call, we'll discuss your health concerns and determine if our approach is right for you."
+      title: "Schedule Your Visit",
+      description: "Call (503) 856-2488 or use our online scheduler in tab above. Option to book a free consultation before your visit.",
+      details: "During a consultation, we'll discuss your health concerns and determine if our approach is right for you."
     },
     {
       step: "2",
