@@ -3,7 +3,7 @@ import { Phone, CreditCard, DollarSign } from "lucide-react";
 export default function Billing() {
   const services = [
     {
-      service: "Initial Appointment",
+      service: "Initial Appointment (telemedicine, in-person)",
       duration: "60 minutes",
       price: "$320",
       description: "Comprehensive evaluation with Dr. Potter"
@@ -21,20 +21,20 @@ export default function Billing() {
       description: "Package of 5 LENS neurofeedback sessions"
     },
     {
-      service: "Follow-up Visits (30-40 min)",
+      service: "Follow-up Visits (30-40 min) (telemedicine, in-person)",
       duration: "30-40 minutes",
       price: "$185",
       description: "Ongoing care and treatment adjustments"
     },
     {
-      service: "Follow-up Visits (45-60 min)",
+      service: "Follow-up Visits (45-60 min) (telemedicine, in-person)",
       duration: "45-60 minutes",
       price: "$231",
       description: "Extended follow-up appointments"
     },
     {
-      service: "Free Consultation",
-      duration: "Phone or Video",
+      service: "Free Consultation (telemedicine, phone or in-person)",
+      duration: "15 minutes",
       price: "Complimentary",
       description: "Initial consultation to discuss your needs"
     }
