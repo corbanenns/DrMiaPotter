@@ -266,16 +266,18 @@ export default function Parents() {
             and learn how our approach can help your family find peace and healing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
+            <Button
               size="lg"
               className="bg-sage-warm text-slate-deep hover:bg-sage-warm/90 px-8 py-4 rounded-full font-semibold text-lg"
+              onClick={() => window.open('https://growintegrativehealth.com/schedule', '_blank')}
             >
               Schedule Parent Consultation
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.open('tel:5038562488', '_self')}
             >Call (503) 856-2488</Button>
           </div>
           <p className="text-sm text-stone-medium mt-4">

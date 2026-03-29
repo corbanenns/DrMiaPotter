@@ -17,14 +17,14 @@ export default function Hero() {
             <StaggerItem>
               <p className="text-xl text-stone-medium leading-relaxed">
                 When your sleep, energy, and digestion improve, everything else follows.{" "}
-                <strong>12 Years</strong> helping Oregonians GROW: Gain Resources for Optimal Wellness.
+                <strong>14 Years</strong> helping Oregonians GROW: Gain Resources for Optimal Wellness.
               </p>
             </StaggerItem>
             <StaggerItem>
               <BreathingElement intensity="subtle" className="bg-white/80 rounded-lg p-6 border border-stone-light gentle-glow">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="font-playfair text-2xl font-bold text-sage-warm">12+</div>
+                    <div className="font-playfair text-2xl font-bold text-sage-warm">14+</div>
                     <div className="text-sm text-stone-medium">Years Experience</div>
                   </div>
                   <div>

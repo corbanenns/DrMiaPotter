@@ -165,11 +165,11 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-slate-deep mb-1">Location</h3>
                       <div className="text-stone-medium">
-                        1655 SW Highland Ave, Suite 5<br />
+                        405 SW 6th St.<br />
                         Redmond, OR 97756
                       </div>
                       <p className="text-sm text-stone-medium mt-1">
-                        Located next to Redmond Wellness, convenient parking available
+                        In Redefined Wellness
                       </p>
                     </div>
                   </div>
@@ -181,10 +181,10 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-slate-deep mb-1">Directions</h3>
                       <p className="text-stone-medium text-sm">Easy access from Highway 97. Free parking on-site. Look for the suite next to Redmond Wellness.</p>
-                      <Button 
-                        variant="link" 
+                      <Button
+                        variant="link"
                         className="text-sage-warm p-0 h-auto mt-2"
-                        onClick={() => window.open('https://maps.google.com/?q=1655+SW+Highland+Ave,+Suite+5,+Redmond,+OR+97756', '_blank')}
+                        onClick={() => window.open('https://maps.google.com/?q=405+SW+6th+St,+Redmond,+OR+97756', '_blank')}
                       >
                         Get Directions →
                       </Button>
@@ -443,8 +443,7 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-4 text-stone-medium">
                   <p>
-                    Our office is conveniently located on SW Highland Avenue, next to Redmond Wellness. 
-                    We're easily accessible from Highway 97 and offer free on-site parking.
+                    Easy access from Highway 97. Parking lot behind building on SW 7th and SW Deschutes. In Redefined Wellness.
                   </p>
                   <div className="bg-sage-warm/10 rounded-lg p-4 border border-sage-warm/20">
                     <h4 className="font-semibold text-slate-deep mb-2">Landmarks & Directions:</h4>
@@ -462,12 +461,12 @@ export default function Contact() {
                 <div className="text-center text-stone-medium">
                   <MapPin className="w-12 h-12 mx-auto mb-4 text-sage-warm" />
                   <p className="font-medium">Interactive Map</p>
-                  <p className="text-sm">1655 SW Highland Ave, Suite 5</p>
+                  <p className="text-sm">405 SW 6th St.</p>
                   <p className="text-sm">Redmond, OR 97756</p>
-                  <Button 
+                  <Button
                     variant="outline"
                     className="mt-4 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep"
-                    onClick={() => window.open('https://maps.google.com/?q=1655+SW+Highland+Ave,+Suite+5,+Redmond,+OR+97756', '_blank')}
+                    onClick={() => window.open('https://maps.google.com/?q=405+SW+6th+St,+Redmond,+OR+97756', '_blank')}
                   >
                     Open in Google Maps
                   </Button>

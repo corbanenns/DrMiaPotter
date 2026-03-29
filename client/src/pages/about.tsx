@@ -11,7 +11,7 @@ export default function About() {
               About Dr. Camella (Mia) Potter, ND
             </h1>
             <p className="text-xl text-stone-medium max-w-3xl mx-auto leading-relaxed">
-              Combining 12 years of expertise in naturopathic medicine with advanced LENS neurofeedback 
+              Combining 14 years of expertise in naturopathic medicine with advanced LENS neurofeedback
               to provide comprehensive, personalized healing for patients throughout Central Oregon.
             </p>
           </div>

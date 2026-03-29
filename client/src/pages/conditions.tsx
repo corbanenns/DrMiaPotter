@@ -303,12 +303,13 @@ export default function Conditions() {
             >
               Schedule Free Consultation
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-2 border-sage-warm text-sage-warm hover:bg-sage-warm hover:text-slate-deep px-8 py-3 rounded-full font-semibold text-lg"
+              onClick={() => window.open('tel:5038562488', '_self')}
             >
-              Call (458) 219-8915
+              Call (503) 856-2488
             </Button>
           </div>
         </div>

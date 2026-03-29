@@ -15,6 +15,7 @@ export default function Header() {
     { name: "Conditions", href: "/conditions" },
     { name: "For Parents", href: "/parents" },
     { name: "New Patients", href: "/new-patients" },
+    { name: "Billing", href: "/billing" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -32,7 +33,10 @@ export default function Header() {
             <div className="flex flex-col items-center sm:items-start">
               <span className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2" />
-                1655 SW Highland Ave, Suite 5, Redmond, OR 97756
+                405 SW 6th St. Redmond, OR 97756
+              </span>
+              <span className="text-xs mt-1">
+                In Redefined Wellness • Parking lot behind building
               </span>
             </div>
             <span className="flex items-center">

@@ -10,6 +10,7 @@ import Services from "@/pages/services";
 import Conditions from "@/pages/conditions";
 import Parents from "@/pages/parents";
 import NewPatients from "@/pages/new-patients";
+import Billing from "@/pages/billing";
 import Contact from "@/pages/contact";
 import MyApproach from "@/pages/my-approach";
 import Schedule from "@/pages/schedule";
@@ -28,6 +29,7 @@ function Router() {
         <Route path="/conditions" component={Conditions} />
         <Route path="/parents" component={Parents} />
         <Route path="/new-patients" component={NewPatients} />
+        <Route path="/billing" component={Billing} />
         <Route path="/contact" component={Contact} />
         <Route path="/my-approach" component={MyApproach} />
         <Route path="/schedule" component={Schedule} />
